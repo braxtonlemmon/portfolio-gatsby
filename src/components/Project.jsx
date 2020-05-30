@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import CardInfo from "./CardInfo"
 
+
 const Card = styled.div`
   position: relative;
   margin: 10px;
@@ -13,7 +14,8 @@ const Card = styled.div`
   grid-template-rows: 1fr 50px;
   &:after {
     content: "";
-    background: url(${props => props.imgUrl});
+    /* background: url(${props => props.imgUrl}); */
+    background: url(${props => `../gif/${props.imgUrl}`});
     background-size: cover;
     background-position-x: ${props => props.imgXY.x};
     background-position-y: ${props => props.imgXY.y};
@@ -70,7 +72,8 @@ const Project = props => {
     <Card
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      imgUrl={process.env.PUBLIC_URL + `gif/${card.img}`}
+      // imgUrl={process.env.PUBLIC_URL + `gif/${card.img}`}
+      imgUrl={card.img}
       imgXY={{ x: card.x, y: card.y }}
     >
       {isHovered && <CardInfo info={card.info} />}

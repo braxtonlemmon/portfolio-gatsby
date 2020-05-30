@@ -67,7 +67,7 @@ const Header = () => {
   return (
     <HeaderBar>
       <Link to="/">
-        <Lemon src={lemon} />
+        <Lemon src={lemon} alt="spinning lemon"/>
       </Link>
       <Link to="#">
         <MyName>Braxton Lemmon</MyName>
