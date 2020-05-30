@@ -69,7 +69,7 @@ const Header = () => {
       <Link to="/">
         <Lemon src={lemon} alt="spinning lemon"/>
       </Link>
-      <Link to="#">
+      <Link to="/Resume">
         <MyName>Braxton Lemmon</MyName>
       </Link>
       {/* <Responsive displayIn={["Tablet", "Laptop"]}> */}

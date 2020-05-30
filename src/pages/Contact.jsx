@@ -83,7 +83,7 @@ const Contact = () => {
         </ContactSection>
         <ContactSection>
           <p className="resume">Resume:</p>
-          <Link to="/resume" className="view">
+          <Link to="/Resume" className="view">
             <p>View</p>
           </Link>
           <SiteLink

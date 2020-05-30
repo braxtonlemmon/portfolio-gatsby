@@ -1,7 +1,7 @@
 import React from "react"
 import "../theme/resumeStyle.css"
 import styled from "styled-components"
-import { Link, useHistory } from "gatsby"
+import { Link } from "gatsby"
 
 const Wrapper = styled.div`
   display: flex;
@@ -28,10 +28,9 @@ const BackButton = styled.p`
 `
 
 function Resume() {
-  const history = useHistory()
   return (
     <Wrapper>
-      <BackButton onClick={() => history.goBack()}>back</BackButton>
+      <BackButton onClick={() => window.history.back(-1)}>back</BackButton>
       <div className="main">
         <div className="wrapper">
           <div className="name">
