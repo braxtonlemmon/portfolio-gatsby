@@ -13,31 +13,35 @@ import { GlobalStyle } from '../theme/GlobalStyle';
 // import { Responsive } from 'responsive-react';
 import Footer from './Footer';
 import Header from "./Header";
-import Content from './Content';
+import { useViewport } from './ViewportProvider';
 
 const Layout = ({ children }) => {
+  const { width }  = useViewport();
+  const breakpoint = 768;
+
   const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     font-family: "Open Sans", sans-serif;
-    padding-top: 100px;
-    margin-bottom: 50px;
+    /* padding-top: 100px; */
+    margin-bottom: 60px;
+    @media (min-width: 768px) {
+      padding-top: 100px;
+    }
   `;
 
   return (
-     <>
+    <>
       <GlobalStyle />
-      <Header />
+      <Header width={breakpoint}/>
       <Wrapper>
         <main>
           {children}
         </main>
-        {/* <Responsive displayIn={["Mobile"]}>
-          <Footer />
-        </Responsive> */}
       </Wrapper>
+      {width < breakpoint && <Footer /> }
     </>
   )
 }

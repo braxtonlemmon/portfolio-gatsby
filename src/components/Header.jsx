@@ -5,6 +5,7 @@ import { H1 } from "./Headings";
 import NavButton from "./NavButton";
 import { Link } from "gatsby";
 import lemon from '../img/lemon.png';
+import { useViewport } from './ViewportProvider';
 
 const HeaderBar = styled.header`
   font-family: 'Open Sans', sans-serif;
@@ -63,7 +64,10 @@ const Lemon = styled.img`
   }
 `
 
-const Header = () => {
+const Header = (props) => {
+  const { width } = useViewport();
+  const breakpoint = 768;
+
   return (
     <HeaderBar>
       <Link to="/">
@@ -72,7 +76,9 @@ const Header = () => {
       <Link to="/Resume">
         <MyName>Braxton Lemmon</MyName>
       </Link>
+      {/* <p>{props.width}</p> */}
       {/* <Responsive displayIn={["Tablet", "Laptop"]}> */}
+      { width >= breakpoint && 
         <TopNav>
           <Link to="/">
             <NavButton top>Home</NavButton>
@@ -87,6 +93,7 @@ const Header = () => {
             <NavButton top>Contact</NavButton>
           </Link>
         </TopNav>
+      }
       {/* </Responsive> */}
     </HeaderBar>
   )

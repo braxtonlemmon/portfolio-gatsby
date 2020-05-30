@@ -24,13 +24,13 @@ const Footer = () => {
       <Link to="/">
         <NavButton>Home</NavButton>
       </Link>
-      <Link to="/">
+      <Link to="/Music">
         <NavButton>Music</NavButton>
       </Link>
-      <Link to="/">
+      <Link to="/About">
         <NavButton>About</NavButton>
       </Link>
-      <Link to="/">
+      <Link to="/Contact">
         <NavButton>Contact</NavButton>
       </Link>
     </Nav>
