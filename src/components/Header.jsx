@@ -1,16 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { H1 } from "./Headings";
-import { Responsive } from "responsive-react";
+// import { Responsive } from "responsive-react";
 import NavButton from "./NavButton";
 import { Link } from "gatsby";
+import lemon from '../img/lemon.png';
 
 const HeaderBar = styled.header`
+  font-family: 'Open Sans', sans-serif;
   width: 100%;
   position: relative;
   margin-bottom: 15px;
   padding: 10px;
   background: #3d3d3d;
+  /* background: ${({ theme }) => theme.colors.yellow}; */
   /* display: flex;
   justify-content: space-between; */
   display: grid;
@@ -64,27 +67,27 @@ const Header = () => {
   return (
     <HeaderBar>
       <Link to="/">
-        <Lemon src={process.env.PUBLIC_URL + "img/lemon.png"} />
+        <Lemon src={lemon} />
       </Link>
       <Link to="#">
         <MyName>Braxton Lemmon</MyName>
       </Link>
-      <Responsive displayIn={["Tablet", "Laptop"]}>
+      {/* <Responsive displayIn={["Tablet", "Laptop"]}> */}
         <TopNav>
           <Link to="/">
             <NavButton top>Home</NavButton>
           </Link>
-          <Link to="#">
+          <Link to="/Music">
             <NavButton top>Music</NavButton>
           </Link>
-          <Link to="#">
+          <Link to="/About">
             <NavButton top>About</NavButton>
           </Link>
-          <Link to="#">
+          <Link to="/Contact">
             <NavButton top>Contact</NavButton>
           </Link>
         </TopNav>
-      </Responsive>
+      {/* </Responsive> */}
     </HeaderBar>
   )
 }

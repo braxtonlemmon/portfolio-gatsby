@@ -9,10 +9,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from 'styled-components';
 import { Reset } from 'styled-reset';
-import { Responsive } from 'responsive-react';
+import { GlobalStyle } from '../theme/GlobalStyle';
+// import { Responsive } from 'responsive-react';
 import Footer from './Footer';
-import Header from "./Header"
-import "./layout.css"
+import Header from "./Header";
+import Content from './Content';
 
 const Layout = ({ children }) => {
   const Wrapper = styled.div`
@@ -21,19 +22,22 @@ const Layout = ({ children }) => {
     align-items: center;
     min-height: 100vh;
     font-family: "Open Sans", sans-serif;
+    padding-top: 100px;
+    margin-bottom: 50px;
   `;
 
   return (
-    <>
-      <Reset />
+     <>
+      <GlobalStyle />
+      <Header />
       <Wrapper>
-        <Header />
-        <main>{children}</main>
-        <Responsive displayIn={["Mobile"]}>
+        <main>
+          {children}
+        </main>
+        {/* <Responsive displayIn={["Mobile"]}>
           <Footer />
-        </Responsive>
+        </Responsive> */}
       </Wrapper>
-
     </>
   )
 }
