@@ -1,6 +1,6 @@
 import React from "react";
 import { useViewport } from './ViewportProvider';
-// import { H1 } from "./Headings";
+import { H1 } from "./Headings";
 import styled from "styled-components";
 import NavButton from "./NavButton";
 import { Link } from "gatsby";
@@ -12,10 +12,7 @@ const HeaderBar = styled.header`
   position: relative;
   margin-bottom: 15px;
   padding: 10px;
-  background: #3d3d3d;
-  /* background: ${({ theme }) => theme.colors.yellow}; */
-  /* display: flex;
-  justify-content: space-between; */
+  background: ${({ theme }) => theme.colors.header};
   display: grid;
   align-items: center;
   grid-template-columns: 80px 1fr;
@@ -39,9 +36,7 @@ const HeaderBar = styled.header`
   }
 `
 
-const MyName = styled.h1`
-  font-size: 1.8em;
-  /* text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
+const MyName = styled(H1)`
   color: white;
   @media (min-width: 465px) {
     font-size: 2.8em;
@@ -53,12 +48,9 @@ const MyName = styled.h1`
     font-size: 2.8em;
   }
 
-  /* &:hover {
+  &:hover {
     color: #e3ca11;
-  } */
-  /* @media only screen and (max-width: 26em) {
-   font-size: 2em; 
-  } */
+  }
 `
 
 const TopNav = styled.div`

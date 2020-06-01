@@ -6,7 +6,7 @@ export const theme = {
            boxColor: "#e9e8e8a3",
            linkColor: "#551a91",
            fadedDark: "#464646",
-           yelloww: "#3d3d3d",
+           header: "#3d3d3d",
          },
          fontSize: {
            paragraph: "1.3em",
@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
 
   *, *:before, *:after {
     box-sizing: border-box;
+    user-select: none;
   }
 
   html {

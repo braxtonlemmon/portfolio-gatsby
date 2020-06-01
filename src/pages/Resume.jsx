@@ -1,7 +1,6 @@
 import React from "react"
 import "../theme/resumeStyle.css"
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 const Wrapper = styled.div`
   display: flex;

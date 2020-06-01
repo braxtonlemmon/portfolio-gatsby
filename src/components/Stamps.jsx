@@ -6,15 +6,15 @@ import {
   FaGitAlt,
   FaReact,
   FaLinux,
-  FaNpm,
+  // FaNpm,
 } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io"
 import { Icon } from "@iconify/react"
 import jestIcon from "@iconify/icons-cib/jest"
-import webpackIcon from "@iconify/icons-cib/webpack"
+// import webpackIcon from "@iconify/icons-cib/webpack"
 import languageRubyOnRails from "@iconify/icons-mdi/language-ruby-on-rails"
-import eslinticon from "@iconify/icons-mdi/eslint"
-import prettierIcon from "@iconify/icons-cib/prettier"
+// import eslinticon from "@iconify/icons-mdi/eslint"
+// import prettierIcon from "@iconify/icons-cib/prettier"
 import rubyIcon from "@iconify/icons-cib/ruby"
 import postgresqlIcon from "@iconify/icons-cib/postgresql"
 // import mySvg from "../assets/Ableton.svg"
@@ -32,7 +32,7 @@ const Stamp = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px;
-  border: 4px dotted black;
+  border: 3px solid black;
   padding: 5px;
   border-radius: 20px;
   height: 110px;

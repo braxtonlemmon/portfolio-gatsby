@@ -55,6 +55,7 @@ const Music = () => {
             <iframe
               width="100%"
               height="500"
+              title="Expired Momentum"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/8174867&sharing=false&show_playcount=false&show_artwork=false&download=false&buying=false&auto_play=false&color=c0000e&show_teaser=false"
             ></iframe>
           </MusicPlayer>

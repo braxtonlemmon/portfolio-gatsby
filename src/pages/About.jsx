@@ -29,6 +29,9 @@ const AboutBox = styled.div`
   @media only screen and (min-width: 1100px) {
     max-width: 50%;
   }
+  H3 {
+    margin-bottom: 20px;
+  }
 `
 
 const TechnologyBox = styled(AboutBox)`
