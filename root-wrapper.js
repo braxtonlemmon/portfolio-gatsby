@@ -5,11 +5,11 @@ import { GlobalStyle, theme } from './src/theme/GlobalStyle';
 import { ViewportProvider } from './src/components/ViewportProvider';
 
 export const wrapRootElement = ({ element }) => (
-  <ViewportProvider>
-    <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme}>
+    <ViewportProvider>
       <GlobalStyle />
       <Layout>{element}</Layout>
-    </ThemeProvider>
-  </ViewportProvider>
+    </ViewportProvider>
+  </ThemeProvider>
 )
 

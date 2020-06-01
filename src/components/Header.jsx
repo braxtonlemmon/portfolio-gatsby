@@ -1,11 +1,10 @@
 import React from "react";
+import { useViewport } from './ViewportProvider';
+// import { H1 } from "./Headings";
 import styled from "styled-components";
-import { H1 } from "./Headings";
-// import { Responsive } from "responsive-react";
 import NavButton from "./NavButton";
 import { Link } from "gatsby";
 import lemon from '../img/lemon.png';
-import { useViewport } from './ViewportProvider';
 
 const HeaderBar = styled.header`
   font-family: 'Open Sans', sans-serif;
@@ -32,20 +31,31 @@ const HeaderBar = styled.header`
     text-decoration: none;
     outline: none;
   }
+  .name-link {
+    justify-self: center;
+    @media (min-width: 768px) {
+      justify-self: left;
+    }
+  }
 `
 
-const MyName = styled(H1)`
+const MyName = styled.h1`
+  font-size: 1.8em;
   /* text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
   color: white;
   @media (min-width: 465px) {
     font-size: 2.8em;
   }
   @media (min-width: 768px) {
-    font-size: 1.7em;
+    font-size: 2.2em;
   }
   @media (min-width: 1000px) {
     font-size: 2.8em;
   }
+
+  /* &:hover {
+    color: #e3ca11;
+  } */
   /* @media only screen and (max-width: 26em) {
    font-size: 2em; 
   } */
@@ -73,7 +83,7 @@ const Header = (props) => {
       <Link to="/">
         <Lemon src={lemon} alt="spinning lemon"/>
       </Link>
-      <Link to="/Resume">
+      <Link to="/Resume" className="name-link">
         <MyName>Braxton Lemmon</MyName>
       </Link>
       {/* <p>{props.width}</p> */}

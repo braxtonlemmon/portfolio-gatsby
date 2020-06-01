@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+/* html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -22,9 +22,9 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-}
+} */
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+/* article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -45,13 +45,13 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
+} */
 
 
 /* My CSS */
 
 /* Universal */
-*, body {
+/* *, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -66,10 +66,10 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 20px;
-}
+} */
 
 /* MAIN WRAPPERS */
-.main {
+.resume__main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +77,7 @@ h2 {
   margin-bottom: 60px;
   margin: 10px 10px 60px 10px;
 }
-.wrapper {
+.resume__wrapper {
   padding: 10px;
   /* height: 3508px; */
   /* width: 2480px; */
@@ -100,12 +100,12 @@ h2 {
   ;
 }
 
-.wrapper >* {
+.resume__wrapper >* {
   padding: 5px;
 }
 
 /* NAME */
-.name {
+.resume__name {
   grid-area: name;
   background-color: rgba(255, 166, 0, 0.473);
   display: flex;
@@ -115,21 +115,21 @@ h2 {
   border-radius: 5px;
 }
 
-.name-first, .name-last {
+.resume__name-first, .resume__name-last {
   font-size: 2rem;
 }
 
-.name-last {
+.resume__name-last {
   align-self: center;
 }
 
-.name-title {
+.resume__name-title {
   align-self: flex-end;
   justify-self: baseline;
 }
 
 /* INFO */
-.info {
+.resume__info {
   grid-area: info;
   background: rgba(241, 213, 175, 0.479);
   box-shadow: -2px 3px grey;
@@ -137,30 +137,30 @@ h2 {
   font-size: 13px;
   }
 
-.info-row {
+.resume__info-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
 
-.info-label {
+.resume__info-label {
   font-weight: bold;
   display: none;
 }
 @media (min-width: 650px) {
-  .info-label {
+  .resume__info-label {
     display: initial; 
   }
 }
 
 @media (min-width: 490px) {
-  .info {
+  .resume__info {
     font-size: 1em;
   }
 }
 
 /* ALL MAIN SECTIONS */
-.section {
+.resume__section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,46 +171,46 @@ h2 {
   border-radius: 5px;
 }
 
-.content {
+.resume__content {
   width: 100%;
   margin-top: 5px;
 
 }
 
 /* PROJECTS */
-.projects {
+.resume__projects {
   grid-area: projects;
   background: rgba(173, 216, 230, 0.26);
 }
 
-.project {
+.resume__project {
   margin-bottom: 5px;
 }
 
-.project-title-bar {
+.resume__project-title-bar {
   display: flex;
 }
 
-.project-title-bar >* {
+.resume__project-title-bar >* {
   margin-right: 5px;
 }
 
-.project-title-bar h3 {
+.resume__project-title-bar h3 {
   font-weight: bold;
 }
 
-.project-info {
+.resume__project-info {
   padding-left: 20px;
 }
 
 
 /* SKILLS */
-.skills {
+.resume__skills {
   grid-area: skills;
   background: rgba(173, 216, 230, 0.26);
 }
 
-.skills-list {
+.resume__skills-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -221,44 +221,40 @@ h2 {
   list-style-type: square;
 }
 
-.skills-list-item {
+.resume__skills-list-item {
   margin-left: 50px;
 }
 /* SCHOOLS */
-.school {
+.resume__school {
   grid-area: school;
   background: rgba(173, 216, 230, 0.26);
 }
 
-.school-item, .work-item {
+.resume__school-item, .resume__work-item {
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin-bottom: 5px;
 }
 
-.school-name, .work-name {
+.resume__school-name, .resume__work-name {
   font-weight: bold;
 }
 
-.school-date,
-.work-location,
-.work-date {
+.resume__school-date,
+.resume__work-location,
+.resume__work-date {
   font-style: italic;
 }
 
-/* WORK */
-.work {
+/* resume__WORK */
+.resume__work {
   grid-area: work;
   background: rgba(173, 216, 230, 0.26);
 }
 
-
-
-
-
 /* PRINTING */
-@media print {
+/* @media print {
   body {
     -webkit-print-color-adjust: exact;
   }
-}
+} */

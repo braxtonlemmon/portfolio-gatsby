@@ -42,10 +42,12 @@ const Home = () => {
   CARDS.forEach(card => projects.push(<Project card={card} key={card.id} />))
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+    }
   }, [])
 
   return (

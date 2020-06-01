@@ -27,45 +27,51 @@ const BackButton = styled.p`
   }
 `
 
+const handleBack = () => {
+  if (typeof window !== 'undefined') {
+    window.history.back(-1)
+  }
+}
+
 function Resume() {
   return (
     <Wrapper>
-      <BackButton onClick={() => window.history.back(-1)}>back</BackButton>
-      <div className="main">
-        <div className="wrapper">
-          <div className="name">
-            <h1 className="name-first">Braxton</h1>
-            <h1 className="name-last">Lemmon</h1>
-            <h2 className="name-title">Web Developer</h2>
+      <BackButton onClick={() => handleBack()}>back</BackButton>
+      <div className="resume__main">
+        <div className="resume__wrapper">
+          <div className="resume__name">
+            <h1 className="resume__name-first">Braxton</h1>
+            <h1 className="resume__name-last">Lemmon</h1>
+            <h2 className="resume__name-title">Web Developer</h2>
           </div>
-          <div className="info">
-            <div className="info-row">
-              <span className="info-label">Phone:</span>
-              <span className="info-value">+32 493 12 33 08</span>
+          <div className="resume__info">
+            <div className="resume__info-row">
+              <span className="resume__info-label">Phone:</span>
+              <span className="resume__info-value">+32 493 12 33 08</span>
             </div>
-            <div className="info-row">
-              <span className="info-label">Email:</span>
-              <span className="info-value">braxtonlemmon@gmail.com</span>
+            <div className="resume__info-row">
+              <span className="resume__info-label">Email:</span>
+              <span className="resume__info-value">braxtonlemmon@gmail.com</span>
             </div>
-            <div className="info-row">
-              <span className="info-label">Website</span>
-              <span className="info-value">
+            <div className="resume__info-row">
+              <span className="resume__info-label">Website</span>
+              <span className="resume__info-value">
                 <a target="blank" href="https://braxtonlemmon.com">
                   braxtonlemmon.com
                 </a>
               </span>
             </div>
-            <div className="info-row">
-              <span className="info-label">Github:</span>
-              <span className="info-value">
+            <div className="resume__info-row">
+              <span className="resume__info-label">Github:</span>
+              <span className="resume__info-value">
                 <a target="blank" href="https://github.com/braxtonlemmon">
                   github.com/braxtonlemmon
                 </a>
               </span>
             </div>
-            <div className="info-row">
-              <span className="info-label">LinkedIn</span>
-              <span className="info-value">
+            <div className="resume__info-row">
+              <span className="resume__info-label">LinkedIn</span>
+              <span className="resume__info-value">
                 <a
                   target="blank"
                   href="https://www.linkedin.com/in/braxtonlemmon"
@@ -75,10 +81,10 @@ function Resume() {
               </span>
             </div>
           </div>
-          <div className="section projects">
+          <div className="resume__section resume__projects">
             <h2>Projects</h2>
 
-            <div className="projects-content content">
+            <div className="resume__projects-content resume__content">
               {/* <!-- <div className="project">
             <div className="project-title-bar">
               <h3>The Campfire</h3>
@@ -92,8 +98,8 @@ function Resume() {
             </p>
             </div>
           </div> --> */}
-              <div className="project">
-                <div className="project-title-bar">
+              <div className="resume__project">
+                <div className="resume__project-title-bar">
                   <h3>Battleship</h3>
                   <a
                     target="blank"
@@ -108,7 +114,7 @@ function Resume() {
                     (Live)
                   </a>
                 </div>
-                <div className="project-info">
+                <div className="resume__project-info">
                   <p>
                     Browser battleship game. Practiced Test Driven Development,
                     building with functional components, implementing
@@ -116,8 +122,8 @@ function Resume() {
                   </p>
                 </div>
               </div>
-              <div className="project">
-                <div className="project-title-bar">
+              <div className="resume__project">
+                <div className="resume__project-title-bar">
                   <h3>Find Waldo</h3>
                   <a
                     target="blank"
@@ -132,7 +138,7 @@ function Resume() {
                     (Live)
                   </a>
                 </div>
-                <div className="project-info">
+                <div className="resume__project-info">
                   <p>
                     Image tagging application. Practiced building a frontend
                     with styled components, using PostgreSQL with Ruby on Rails,
@@ -141,21 +147,21 @@ function Resume() {
                   </p>
                 </div>
               </div>
-              {/* <!-- <div className="project">
-            <div className="project-title-bar">
+              {/* <!-- <div className="resume__project">
+            <div className="resume__project-title-bar">
               <h3>Weather Checker</h3>
               <a target="blank" href="https://github.com/braxtonlemmon/weather-app">(Github)</a>
               <a target="blank" href="https://braxtonlemmon.github.io/weather-app/">(Live)</a>
             </div>
-            <div className="project-info">
+            <div className="resume__project-info">
               <p>
                 Finds weather data by city. Practiced API interaction, asynchronous functions, and styled components. Built using
                 OpenWeather API, React, HTML, and CSS.
               </p>
             </div>
           </div> --> */}
-              <div className="project">
-                <div className="project-title-bar">
+              <div className="resume__project">
+                <div className="resume__project-title-bar">
                   <h3>Book Library</h3>
                   <a
                     target="blank"
@@ -170,7 +176,7 @@ function Resume() {
                     (Live)
                   </a>
                 </div>
-                <div className="project-info">
+                <div className="resume__project-info">
                   <p>
                     GUI book library. Practiced using a JavaScript framework and
                     working with components. Built using React, localStorage,
@@ -178,8 +184,8 @@ function Resume() {
                   </p>
                 </div>
               </div>
-              <div className="project">
-                <div className="project-title-bar">
+              <div className="resume__project">
+                <div className="resume__project-title-bar">
                   <h3>Chess</h3>
                   <a
                     target="blank"
@@ -188,7 +194,7 @@ function Resume() {
                     (Github)
                   </a>
                 </div>
-                <div className="project-info">
+                <div className="resume__project-info">
                   <p>
                     Command line game. Practiced Test Driven Development,
                     writing modular code, and storing objects in YAML. Built
@@ -198,63 +204,63 @@ function Resume() {
               </div>
             </div>
           </div>
-          <div className="section skills">
+          <div className="resume__section resume__skills">
             <h2>Skills and Technologies</h2>
-            <div className="skills-content content">
-              <ul className="skills-list">
-                <li className="skills-list-item">HTML5</li>
-                <li className="skills-list-item">CSS3</li>
-                <li className="skills-list-item">JavaScript</li>
-                <li className="skills-list-item">React</li>
-                <li className="skills-list-item">Ruby on Rails</li>
-                <li className="skills-list-item">RSpec</li>
-                <li className="skills-list-item">Jest</li>
-                <li className="skills-list-item">Git</li>
-                <li className="skills-list-item">Linux</li>
-                <li className="skills-list-item">Express</li>
-                <li className="skills-list-item">Node.js</li>
+            <div className="resume__skills-content content">
+              <ul className="resume__skills-list">
+                <li className="resume__skills-list-item">HTML5</li>
+                <li className="resume__skills-list-item">CSS3</li>
+                <li className="resume__skills-list-item">JavaScript</li>
+                <li className="resume__skills-list-item">React</li>
+                <li className="resume__skills-list-item">Ruby on Rails</li>
+                <li className="resume__skills-list-item">RSpec</li>
+                <li className="resume__skills-list-item">Jest</li>
+                <li className="resume__skills-list-item">Git</li>
+                <li className="resume__skills-list-item">Linux</li>
+                <li className="resume__skills-list-item">Express</li>
+                <li className="resume__skills-list-item">Node.js</li>
               </ul>
             </div>
           </div>
-          <div className="section school">
+          <div className="resume__section resume__school">
             <h2>Education</h2>
-            <div className="school-content content">
-              <div className="school-item">
-                <h3 className="school-name">The Odin Project</h3>
-                <p className="school-date">2018 - Present</p>
-                <h4 className="school-track">Full Stack Track</h4>
+            <div className="resume__school-content content">
+              <div className="resume__school-item">
+                <h3 className="resume__school-name">The Odin Project</h3>
+                <p className="resume__school-date">2018 - Present</p>
+                <h4 className="resume__school-track">Full Stack Track</h4>
               </div>
-              <div className="school-item">
-                <h3 className="school-name">Brigham Young University</h3>
-                <p className="school-date">2007 - 2014</p>
-                <h4 className="school-track">
+              <div className="resume__school-item">
+                <h3 className="resume__school-name">Brigham Young University</h3>
+                <p className="resume__school-date">2007 - 2014</p>
+                <h4 className="resume__school-track">
                   Bachelor of Science - Recreation Management
                 </h4>
               </div>
             </div>
           </div>
-          <div className="section work">
+          <div className="resume__section resume__work">
             <h2>Work Experience</h2>
-            <div className="work-content content">
-              <div className="work-item">
-                <h3 className="work-name">California State Prison</h3>
-                <p className="work-location">California, USA</p>
-                <h4 className="work-title">Recreation Therapist</h4>
-                <p className="work-date">June 2017 - Sept. 2018</p>
+            <div className="resume__work-content content">
+              <div className="resume__work-item">
+                <h3 className="resume__work-name">California State Prison</h3>
+                <p className="resume__work-location">California, USA</p>
+                <h4 className="resume__work-title">Recreation Therapist</h4>
+                <p className="resume__work-date">June 2017 - Sept. 2018</p>
               </div>
-              <div className="work-item">
-                <h3 className="work-name">
+              <div className="resume__work-item">
+                <h3 className="resume__work-name">
                   Centre International d’Études Pédagogiques
                 </h3>
-                <p className="work-location">Lyon, France</p>
-                <h4 className="work-title">Teaching Assistant</h4>
-                <p className="work-date">Sept. 2015 - Apr. 2017</p>
+                <p className="resume__work-location">Lyon, France</p>
+                <h4 className="resume__work-title">Teaching Assistant</h4>
+                <p className="resume__work-date">Sept. 2015 - Apr. 2017</p>
               </div>
-              <div className="work-item">
-                <h3 className="work-name">HCA Medical City McKinney</h3>
-                <p className="work-location">Texas, USA</p>
-                <h4 className="work-title">Recreation Therapist</h4>
-                <p className="work-date">Oct. 2014 - Sept. 2015</p>
+              <div className="resume__work-item">
+                <h3 className="resume__work-name">HCA Medical City McKinney</h3>
+                <p className="resume__work-location">Texas, USA</p>
+                <h4 className="resume__work-title">Recreation Therapist</h4>
+                <p className="resume__work-date">Oct. 2014 - Sept. 2015</p>
               </div>
             </div>
           </div>
@@ -276,7 +282,7 @@ export default Resume
 //   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 // </head>
 // <body>
-//   <div className="main">
+//   <div className="resume-main">
 //     <div className="wrapper">
 //       <div className="name">
 //         <h1 className="name-first">Braxton</h1>
@@ -325,7 +331,7 @@ export default Resume
 //           </span>
 //         </div>
 //       </div>
-//       <div className="section projects">
+//       <div className="resume__section projects">
 //         <h2>Projects</h2>
 
 //         <div className="projects-content content">
@@ -406,7 +412,7 @@ export default Resume
 //           </div>
 //         </div>
 //       </div>
-//       <div className="section skills">
+//       <div className="resume__section skills">
 //         <h2>Skills and Technologies</h2>
 //         <div className="skills-content content">
 //           <ul className="skills-list">
