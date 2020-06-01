@@ -8,7 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from 'styled-components';
-import { GlobalStyle } from '../theme/GlobalStyle';
 import Footer from './Footer';
 import Header from "./Header";
 import { useViewport } from './ViewportProvider';
@@ -32,7 +31,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
       <Header width={breakpoint}/>
       <Wrapper>
         <main>

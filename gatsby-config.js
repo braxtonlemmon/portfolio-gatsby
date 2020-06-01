@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,8 +15,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-page-transitions',
       options: {
@@ -43,6 +42,8 @@ module.exports = {
         display: 'swap'
       }
     },
+    'gatsby-transformer-sharp',
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

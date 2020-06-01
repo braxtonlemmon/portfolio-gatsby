@@ -3,8 +3,9 @@ import { useViewport } from './ViewportProvider';
 import { H1 } from "./Headings";
 import styled from "styled-components";
 import NavButton from "./NavButton";
-import { Link } from "gatsby";
+import { Link , useStaticQuery, graphql } from "gatsby";
 import lemon from '../img/lemon.png';
+import Img from 'gatsby-image';
 
 const HeaderBar = styled.header`
   font-family: 'Open Sans', sans-serif;
@@ -33,6 +34,13 @@ const HeaderBar = styled.header`
     @media (min-width: 768px) {
       justify-self: left;
     }
+  }
+
+  .lemon {
+    transition: transform 1s ease-in-out;
+    &:hover {
+      transform: rotate(360deg);
+  }
   }
 `
 
@@ -70,16 +78,34 @@ const Header = (props) => {
   const { width } = useViewport();
   const breakpoint = 768;
 
+
+  const data = useStaticQuery(
+    graphql`
+      query {
+        file(relativePath: { eq: "lemon.png" }) {
+          childImageSharp {
+            fixed(height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    `
+  )
+
   return (
     <HeaderBar>
       <Link to="/">
-        <Lemon src={lemon} alt="spinning lemon"/>
+        {/* <Lemon src={lemon} alt="spinning lemon"/> */}
+        <Img
+          fixed={data.file.childImageSharp.fixed}
+          alt="spinning lemon"
+          className="lemon"
+        />
       </Link>
       <Link to="/Resume" className="name-link">
         <MyName>Braxton Lemmon</MyName>
       </Link>
-      {/* <p>{props.width}</p> */}
-      {/* <Responsive displayIn={["Tablet", "Laptop"]}> */}
       { width >= breakpoint && 
         <TopNav>
           <Link to="/">
@@ -96,7 +122,6 @@ const Header = (props) => {
           </Link>
         </TopNav>
       }
-      {/* </Responsive> */}
     </HeaderBar>
   )
 }
