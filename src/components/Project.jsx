@@ -14,8 +14,8 @@ const Card = styled.div`
   grid-template-rows: 1fr 50px;
   &:after {
     content: "";
-    /* background: url(${props => props.imgUrl}); */
-    background: url(${props => `../gif/${props.imgUrl}`});
+
+    background: url(${props => `/${props.imgUrl}`});
     background-size: cover;
     background-position-x: ${props => props.imgXY.x};
     background-position-y: ${props => props.imgXY.y};

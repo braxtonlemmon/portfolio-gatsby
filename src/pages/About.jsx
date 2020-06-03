@@ -4,6 +4,8 @@ import { H2, H3 } from "../components/Headings"
 import Stamps from "../components/Stamps"
 import Bio from "../components/Bio"
 import Hobbies from "../components/Hobbies"
+import HobbySlider from '../components/HobbySlider';
+
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 const AboutWrapper = styled.div`
@@ -12,6 +14,9 @@ const AboutWrapper = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  .hobbies {
+    position: relative;
+  }
 `
 
 const AboutBox = styled.div`
@@ -46,6 +51,8 @@ const TechnologyBox = styled(AboutBox)`
   }
 `
 
+
+
 const About = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -68,9 +75,10 @@ const About = () => {
           <H3>Technologies</H3>
           <Stamps />
         </TechnologyBox>
-        <AboutBox>
+        <AboutBox className="hobbies">
           <H3>What I Do</H3>
-          <Hobbies />
+          <HobbySlider />
+          {/* <Hobbies /> */}
         </AboutBox>
       </AboutWrapper>
     </PageTransition>

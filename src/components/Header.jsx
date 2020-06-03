@@ -4,7 +4,6 @@ import { H1 } from "./Headings";
 import styled from "styled-components";
 import NavButton from "./NavButton";
 import { Link , useStaticQuery, graphql } from "gatsby";
-import lemon from '../img/lemon.png';
 import Img from 'gatsby-image';
 
 const HeaderBar = styled.header`
@@ -64,14 +63,6 @@ const MyName = styled(H1)`
 const TopNav = styled.div`
   display: flex;
   justify-content: center;
-`
-
-const Lemon = styled.img`
-  height: 50px;
-  transition: transform 1s ease-in-out;
-  &:hover {
-    transform: rotate(360deg);
-  }
 `
 
 const Header = (props) => {
