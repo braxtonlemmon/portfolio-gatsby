@@ -36,8 +36,9 @@ const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.2rem;
-  @media only screen and (min-width: 23em) {
+  font-size: 1rem;
+
+  @media only screen and (min-width: 26em) {
     font-size: 1.4rem;
   }
   .resume {

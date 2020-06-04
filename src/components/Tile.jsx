@@ -16,12 +16,21 @@ const TileBox = styled.div`
 
   border: ${props => {
     if (props.accent) {
-      return "4px solid black"
+      return "3px solid black"
     } else {
       return "none"
     }
   }};
 
+  @media (min-width: 416px) {
+    border: ${props => {
+    if (props.accent) {
+      return "4px solid black"
+    } else {
+      return "none"
+    }
+  }};
+  }
   color: ${props => (props.develop ? "#e0ff5d" : "white")};
   height: 100%;
   width: 100%;

@@ -15,7 +15,7 @@ const slide = keyframes`
 `;
 
 const ImgWrapper = styled.div`
-  width: 400px;
+  width: 100%;
   height: 300px;
   margin: 15px;
   .image {
@@ -47,6 +47,7 @@ const ButtonsBox = styled.div`
     background: ${({ theme }) => theme.colors.header};
     border-radius: 50%;
     margin: 0;
+    user-select: none;
     transition: transform 0.2s linear;
     cursor: pointer;
     &:hover {

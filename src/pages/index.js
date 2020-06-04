@@ -21,7 +21,7 @@ const Projects = styled.div`
 
 const Work = styled.div`
   width: 85%;
-  padding: 10px;
+  padding: 15px 0;
   background: ${props => props.theme.colors.boxColor};
   box-shadow: 5px 5px 3px grey, -5px 5px 3px grey;
   z-index: 1;

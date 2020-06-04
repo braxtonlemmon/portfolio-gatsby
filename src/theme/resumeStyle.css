@@ -83,9 +83,9 @@ h2 {
   /* width: 2480px; */
   height: 1000px;
   width: 595px;
-  width: 95%;
+  width: 90%;
   max-width: 900px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   display: grid;
   justify-content: center;
   gap: 10px;

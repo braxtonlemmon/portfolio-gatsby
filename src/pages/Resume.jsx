@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
   a {
     text-decoration: none;
     color: ${props => props.theme.colors.linkColor};

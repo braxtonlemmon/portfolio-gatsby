@@ -9,13 +9,18 @@ import HobbySlider from '../components/HobbySlider';
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 const AboutWrapper = styled.div`
-  margin: 50px;
+  margin: 50px 10px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   .hobbies {
     position: relative;
+    width: 100%;
+    @media (min-width: 1000px) {
+      min-width: 650px;
+      max-width: 50%;
+    }
   }
 `
 
