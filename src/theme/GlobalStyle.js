@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {
     box-sizing: border-box;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
