@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
           {children}
         </main>
       </Wrapper>
-      {width < breakpoint && <Footer /> }
+      {width !== null && width < breakpoint && <Footer /> }
     </>
   )
 }
