@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 86em) {
     align-items: flex-start;
     text-align: left;
+    margin-left: 100px;
   }
 
   p {
