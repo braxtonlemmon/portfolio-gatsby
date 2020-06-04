@@ -25,6 +25,10 @@ const ImgWrapper = styled.div`
     width: 100%;
     box-shadow: -2px 3px 2px grey;
   }
+  @media (min-width: 1000px) {
+    width: 600px;
+    height: 400px;
+  }
 `;
 
 const ButtonsBox = styled.div`

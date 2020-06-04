@@ -9,7 +9,7 @@ import HobbySlider from '../components/HobbySlider';
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 const AboutWrapper = styled.div`
-  margin: 0 50px;
+  margin: 50px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -65,8 +65,8 @@ const About = () => {
 
   return (
     <PageTransition>
+      <H2>About</H2>
       <AboutWrapper>
-        <H2>About</H2>
         <AboutBox bio>
           <H3>Bio</H3>
           <Bio />

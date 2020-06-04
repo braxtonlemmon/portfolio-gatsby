@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  margin-top: 50px;
 `
 
 const MusicContent = styled.div`
@@ -47,8 +48,8 @@ const Music = () => {
 
   return (
     <PageTransition>
+      <H2>Music</H2>
       <Wrapper>
-        <H2>Music</H2>
         <MusicContent>
           <MusicAbout />
           <MusicPlayer>
