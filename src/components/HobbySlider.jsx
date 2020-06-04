@@ -47,7 +47,6 @@ const ButtonsBox = styled.div`
     background: ${({ theme }) => theme.colors.header};
     border-radius: 50%;
     margin: 0;
-    user-select: none;
     transition: transform 0.2s linear;
     cursor: pointer;
     &:hover {
@@ -56,9 +55,13 @@ const ButtonsBox = styled.div`
   }
   .right-caret {
     padding-left: 11px;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
   .left-caret {
     padding-right: 11px;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
 `;
 
