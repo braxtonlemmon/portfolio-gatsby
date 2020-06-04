@@ -37,6 +37,8 @@ const HeaderBar = styled.header`
 
   .lemon {
     transition: transform 1s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
     &:hover {
       transform: rotate(360deg);
   }
