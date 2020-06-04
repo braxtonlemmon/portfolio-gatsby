@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 
 const Layout = ({ children }) => {
   const { width }  = useViewport();
-  const breakpoint = 768;
+  const breakpoint = 768;   
 
   return (
     <>
