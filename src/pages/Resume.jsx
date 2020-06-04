@@ -81,7 +81,7 @@ function Resume() {
             </div>
           </div>
           <div className="resume__section resume__projects">
-            <h2>Projects</h2>
+            <h2 className="resume__section-title">Projects</h2>
 
             <div className="resume__projects-content resume__content">
               {/* <!-- <div className="project">
@@ -204,7 +204,7 @@ function Resume() {
             </div>
           </div>
           <div className="resume__section resume__skills">
-            <h2>Skills and Technologies</h2>
+            <h2 className="resume__section-title">Skills and Technologies</h2>
             <div className="resume__skills-content content">
               <ul className="resume__skills-list">
                 <li className="resume__skills-list-item">HTML5</li>
@@ -222,7 +222,7 @@ function Resume() {
             </div>
           </div>
           <div className="resume__section resume__school">
-            <h2>Education</h2>
+            <h2 className="resume__section-title">Education</h2>
             <div className="resume__school-content content">
               <div className="resume__school-item">
                 <h3 className="resume__school-name">The Odin Project</h3>
@@ -239,7 +239,7 @@ function Resume() {
             </div>
           </div>
           <div className="resume__section resume__work">
-            <h2>Work Experience</h2>
+            <h2 className="resume__section-title">Work Experience</h2>
             <div className="resume__work-content content">
               <div className="resume__work-item">
                 <h3 className="resume__work-name">California State Prison</h3>
