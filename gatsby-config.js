@@ -42,6 +42,14 @@ module.exports = {
         display: 'swap'
       }
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /icons/
+        }
+      }
+    },
     'gatsby-transformer-sharp',
 
     // this (optional) plugin enables Progressive Web App + Offline functionality

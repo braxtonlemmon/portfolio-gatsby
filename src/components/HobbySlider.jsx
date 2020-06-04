@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Left from '../icons/caret-back-outline.svg';
+import Right from '../icons/caret-forward-outline.svg';
 
 const slide = keyframes`
   from {
-
     opacity: 0.3;
   }
   to {
-
     opacity: 0.9;
   }
 `;
@@ -23,7 +23,7 @@ const ImgWrapper = styled.div`
     animation: ${slide} 0.8s ;
     height: 100%;
     width: 100%;
-    box-shadow: -2px 2px 2px grey;
+    box-shadow: -2px 3px 2px grey;
   }
 `;
 
@@ -35,46 +35,27 @@ const ButtonsBox = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px 25px;
-`;
-
-const RightArrow = styled.div`
-  border-color: transparent white;
-  border-style: solid;
-  border-width: 10px 0px 10px 15px;
-  height: 0;
-  width: 0;
-  margin-left: 3px;
-`;
-
-const LeftArrow = styled.div`
-  border-color: transparent white;
-  border-style: solid;
-  border-width: 10px 15px 10px 0px;
-  height: 0;
-  width: 0;
-  margin-right: 3px;
-
-`
-
-const Button = styled.button`
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  border: none;
-  padding: 3px;
-  background-color: grey;
-  cursor: pointer;
-  color: white;
-  font-weight: 800;
-  font-size: 1.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:hover {
-    border: 2px solid black;
+  .caret {
+    height: 45px;
+    width: 45px;
+    fill: white;
+    padding: 8px;
+    background: grey;
+    border-radius: 50%;
+    margin: 0;
+    transition: transform 0.2s linear;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  .right-caret {
+    padding-left: 11px;
+  }
+  .left-caret {
+    padding-right: 11px;
   }
 `;
-
 
 function HobbySlider() {
   const [index, setIndex] = useState(0);
@@ -123,12 +104,14 @@ function HobbySlider() {
         alt={node.name.replace(/-/g, ' ').substring(2)}
       />
       <ButtonsBox>
-        <Button onClick={() => handlePrevious()}>
-          <LeftArrow></LeftArrow>
-        </Button>
-        <Button onClick={() => handleNext()}>
-          <RightArrow></RightArrow>
-        </Button>
+        <Left 
+          onClick={() => handlePrevious()}
+          className="left-caret caret"
+        />
+        <Right 
+          onClick={() => handleNext()}
+          className="right-caret caret" 
+        />
       </ButtonsBox>
     </ImgWrapper>
   )
