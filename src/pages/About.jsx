@@ -5,6 +5,7 @@ import Stamps from "../components/Stamps"
 import Bio from "../components/Bio"
 import Hobbies from "../components/Hobbies"
 import HobbySlider from '../components/HobbySlider';
+import SEO from "../components/seo"
 
 import PageTransition from 'gatsby-plugin-page-transitions';
 
@@ -69,24 +70,27 @@ const About = () => {
   }, [])
 
   return (
-    <PageTransition>
-      <H2>About</H2>
-      <AboutWrapper>
-        <AboutBox bio>
-          <H3>Bio</H3>
-          <Bio />
-        </AboutBox>
-        <TechnologyBox>
-          <H3>Technologies</H3>
-          <Stamps />
-        </TechnologyBox>
-        <AboutBox className="hobbies">
-          <H3>What I Do</H3>
-          <HobbySlider />
-          {/* <Hobbies /> */}
-        </AboutBox>
-      </AboutWrapper>
-    </PageTransition>
+    <>
+      <SEO title="About" />
+      <PageTransition>
+        <H2>About</H2>
+        <AboutWrapper>
+          <AboutBox bio>
+            <H3>Bio</H3>
+            <Bio />
+          </AboutBox>
+          <TechnologyBox>
+            <H3>Technologies</H3>
+            <Stamps />
+          </TechnologyBox>
+          <AboutBox className="hobbies">
+            <H3>What I Do</H3>
+            <HobbySlider />
+            {/* <Hobbies /> */}
+          </AboutBox>
+        </AboutWrapper>
+      </PageTransition>
+    </>
   )
 }
 

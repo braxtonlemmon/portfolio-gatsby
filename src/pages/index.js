@@ -5,6 +5,7 @@ import CARDS from "../data/CARDS.js"
 import { H2 } from "../components/Headings"
 import Crossword from "../components/Crossword"
 import PageTransition from 'gatsby-plugin-page-transitions';
+import SEO from '../components/seo';
 
 const Wrapper = styled.div`
   display: flex;
@@ -51,15 +52,18 @@ const Home = () => {
   }, [])
 
   return (
-    <PageTransition>
-      <Wrapper>
-        <Crossword />
-        <Work>
-          <H2>Work</H2>
-          <Projects>{projects}</Projects>
-        </Work>
-      </Wrapper>
-    </PageTransition>
+    <>
+      <SEO title="Home" />
+      <PageTransition>
+        <Wrapper>
+          <Crossword />
+          <Work>
+            <H2>Work</H2>
+            <Projects>{projects}</Projects>
+          </Work>
+        </Wrapper>
+      </PageTransition>
+    </>
   )
 }
 

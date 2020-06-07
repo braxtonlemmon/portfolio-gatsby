@@ -1,6 +1,7 @@
 import React from "react"
 import "../theme/resumeStyle.css"
 import styled from "styled-components"
+import SEO from '../components/seo';
 
 const Wrapper = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ const handleBack = () => {
 function Resume() {
   return (
     <Wrapper>
+      <SEO title="Resume" />
       <BackButton onClick={() => handleBack()}>back</BackButton>
       <div className="resume__main">
         <div className="resume__wrapper">
