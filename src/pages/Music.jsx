@@ -49,7 +49,7 @@ const Music = () => {
 
   return (
     <>
-      <SEO title="Contact" />
+      <SEO title="Music" />
       <PageTransition>
         <H2>Music</H2>
         <Wrapper>

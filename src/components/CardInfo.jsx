@@ -12,6 +12,11 @@ const CardInfoBox = styled.div`
   align-content: center;
   justify-items: center;
   padding: 20px;
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(221, 221, 221, 0.54);
 `
 
 const CardTitle = styled(H2)`

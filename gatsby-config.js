@@ -5,9 +5,6 @@ module.exports = {
     author: `Braxton Lemmon`,
   },
   plugins: [
-    'gatsby-plugin-styled-components',
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,7 +27,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `src/images/lemon_icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -50,6 +47,17 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://www.braxtonlemmon.com/',
+      },
+    },
+    // 'gatsby-plugin-offline',
+    'gatsby-plugin-styled-components',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    'gatsby-plugin-netlify',
     'gatsby-transformer-sharp',
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
