@@ -11,6 +11,8 @@ import {
 import { IoLogoJavascript } from "react-icons/io"
 import { Icon } from "@iconify/react"
 import jestIcon from "@iconify/icons-cib/jest"
+import { GrGatsbyjs } from "react-icons/gr"
+
 // import webpackIcon from "@iconify/icons-cib/webpack"
 import languageRubyOnRails from "@iconify/icons-mdi/language-ruby-on-rails"
 // import eslinticon from "@iconify/icons-mdi/eslint"
@@ -73,6 +75,10 @@ const Stamps = () => {
       <Stamp>
         <Icon icon={jestIcon} height={size} />
         <Label>Jest</Label>
+      </Stamp>
+      <Stamp>
+        <GrGatsbyjs size={size} />
+        <Label>GatsbyJS</Label>
       </Stamp>
       {/* <Stamp>
         <FaNpm size={size} />
