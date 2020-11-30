@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import Project from "../components/Project"
+import ProjectRow from "../components/ProjectRow";
 import CARDS from "../data/CARDS.js"
 import { H2 } from "../components/Headings"
 import Crossword from "../components/Crossword"
@@ -40,7 +41,8 @@ const Work = styled.div`
 
 const Home = () => {
   const projects = []
-  CARDS.forEach(card => projects.push(<Project card={card} key={card.id} />))
+  // CARDS.forEach(card => projects.push(<Project card={card} key={card.id} />))
+  CARDS.forEach(card => projects.push(<ProjectRow card={card} key={card.id} />))
 
   useEffect(() => {
     if (typeof window !== "undefined") {
