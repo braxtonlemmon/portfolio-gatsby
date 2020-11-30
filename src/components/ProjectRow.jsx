@@ -5,37 +5,80 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
   margin: 15px 0;
+  padding: 15px;
   width: 95%;
+  background: white;
   video {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 230px;
+    height: 300px;
     object-fit: cover;
+    border: 2px solid black;
+  }
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 `;
 
-const Label = styled.h2`
+const TextSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid red; */
+  width: 100%;
+  p {
+    text-align: center;
+  }
+`;
+
+const MobileTitle = styled.h2`
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const LargeTitle = styled.h2`
+  font-size: 1.5em;
+  display: none;
+  @media only screen and (min-width: 768px) {
+    display: block;
+  }
+`;
+
+const Title = styled.h2`
+  font-size: 1.4em;
+  margin-bottom: 15px;
+`;
+
+const Label = styled.h3`
   border: 1px solid black;
-  background: grey;
+  background: black;
+  color: white;
+  margin: 15px 0 10px 0;
+  padding: 3px;
 `;
 
 function ProjectRow({ card }) {
   return (
     <Wrapper>
-      <p>{card.info.title}</p>
+      <MobileTitle>{card.info.title}</MobileTitle>
       <video autoPlay loop muted playsInline>
         <source src={`${card.img}.webm`} type="video/webm"></source>
         <source src={`${card.img}.mp4`} type="video/mp4"></source>
       </video>
-      <Label>Description</Label>
-      <p>{card.info.about}</p>
-      <Label>Learned</Label>
-      <p>what i learned</p>
-      <Label>Technologies</Label>
-      <p>{card.info.technologies.join(", ")}</p>
+      <TextSection>
+        <LargeTitle>{card.info.title}</LargeTitle>
+        <Label>Description</Label>
+        <p>{card.info.about}</p>
+        <Label>Learned</Label>
+        <p>what i learned</p>
+        <Label>Technologies</Label>
+        <p>{card.info.technologies.join(", ")}</p>
+      </TextSection>
     </Wrapper>
   )
 }
