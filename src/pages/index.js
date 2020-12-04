@@ -42,7 +42,7 @@ const Work = styled.div`
 const Home = () => {
   const projects = []
   // CARDS.forEach(card => projects.push(<Project card={card} key={card.id} />))
-  CARDS.forEach(card => projects.push(<ProjectRow card={card} key={card.id} />))
+  CARDS.reverse().forEach(card => projects.push(<ProjectRow card={card} key={card.id} />))
 
   useEffect(() => {
     if (typeof window !== "undefined") {

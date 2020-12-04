@@ -1,4 +1,5 @@
 const CARDS = [
+ 
   {
     id: 0,
     img: "battleship",
@@ -10,6 +11,7 @@ const CARDS = [
     info: {
       title: "Battleship",
       about: "Browser battleship game.",
+      learned: "What I learned",
       technologies: ["React", "Jest", "HTML", "CSS"],
     },
   },
@@ -24,6 +26,7 @@ const CARDS = [
     info: {
       title: "Book Library",
       about: "Digital book library",
+      learned: "What I learned",
       technologies: ["React", "HTML", "CSS"],
     },
   },
@@ -38,6 +41,7 @@ const CARDS = [
     info: {
       title: "Chess",
       about: "Command line chess game",
+      learned: "What I learned",
       technologies: ["Ruby", "RSpec"],
     },
   },
@@ -52,6 +56,7 @@ const CARDS = [
     info: {
       title: "Pomodoro Timer",
       about: "Productivity tool to manage workflow",
+      learned: "What I learned",
       technologies: ["HTML", "CSS", "JavaScript"],
     },
   },
@@ -66,6 +71,7 @@ const CARDS = [
     info: {
       title: "Weather Finder",
       about: "Uses OpenWeather API to obtain live weather data",
+      learned: "What I learned",
       technologies: ["HTML", "CSS", "JavaScript", "React", "API"],
     },
   },
@@ -80,6 +86,7 @@ const CARDS = [
     info: {
       title: "The Campfire",
       about: "Social networking site",
+      learned: "What I learned",
       technologies: ["Ruby on Rails", "HTML", "CSS"],
     },
   },
@@ -94,9 +101,40 @@ const CARDS = [
     info: {
       title: "Pitchfork Clone",
       about: "Visual replication of pitchfork.com",
+      learned: "What I learned",
       technologies: ["HTML", "CSS"],
     },
   },
+  {
+    id: 8,
+    img: "pitchfork",
+    github: "https://github.com/braxtonlemmon/recipe-blog-client",
+    live: "https://www.peelthegarlic.com",
+    isLive: true,
+    x: 0,
+    y: 0,
+    info: {
+      title: "Peel the Garlic",
+      about: "Recipe site.",
+      learned: "What I learned",
+      technologies: ["Gatsby"]
+    }
+  },
+  {
+    id: 7,
+    img: "pitchfork",
+    github: "https://github.com/braxtonlemmon/cv-project-react",
+    live: "https://braxtonlemmon.github.io/cv-project-react/",
+    isLive: true,
+    x: 0,
+    y: 0,
+    info: {
+      title: "CV Generator",
+      about: "User fills out form to generate a CV",
+      learned: "What I learned",
+      technologies: ["React"]
+    }
+  }
 ]
 
 export default CARDS
