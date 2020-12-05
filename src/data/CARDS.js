@@ -130,9 +130,9 @@ const CARDS = [
     y: 0,
     info: {
       title: "CV Generator",
-      about: "User fills out form to generate a CV User fills out form to generate a CV User fills out form to generate a CV User fills out form to generate a CV User fills out form to generate a CV User fills out form to generate a CVUser fills out form to generate a CV User fills out form to generate a CV ",
-      learned: "What I learned",
-      technologies: ["React"]
+      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet justo donec enim diam vulputate ut pharetra sit amet. Elit ut aliquam purus sit amet luctus venenatis lectus. Id donec ultrices tincidunt arcu non sodales neque sodales. Venenatis a condimentum vitae sapien pellentesque habitant morbi. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. A condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Consequat nisl vel pretium lectus quam id. Aliquet nibh praesent tristique magna sit amet purus gravida. Lacinia at quis risus sed. Urna id volutpat lacus laoreet non curabitur gravida arcu.",
+      learned: "Viverra maecenas accumsan lacus vel facilisis volutpat est velit. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum. Scelerisque viverra mauris in aliquam sem. Ac tortor vitae purus faucibus ornare suspendisse sed. Aenean vel elit scelerisque mauris pellentesque pulvinar. Eros in cursus turpis massa tincidunt dui ut ornare. In ante metus dictum at. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. ",
+      technologies: ["React, JavaScript, HTML, CSS"]
     }
   }
 ]

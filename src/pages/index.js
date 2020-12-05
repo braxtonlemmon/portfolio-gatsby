@@ -7,11 +7,13 @@ import { H2 } from "../components/Headings"
 import Crossword from "../components/Crossword"
 import PageTransition from 'gatsby-plugin-page-transitions';
 import SEO from '../components/seo';
+import Title from '../components/Title';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #474542;
 `
 
 const Projects = styled.div`
@@ -44,6 +46,7 @@ const Work = styled.div`
   padding: 15px 0;
   background: ${props => props.theme.colors.boxColor};
   background: white;
+  background: #f4ebdd;
   /* box-shadow: 5px 5px 3px grey, -5px 5px 3px grey; */
   z-index: 1;
   margin-bottom: 20px;
@@ -79,9 +82,12 @@ const Home = () => {
         <Wrapper>
           <Crossword />
           <Work>
-            <H2>Work</H2>
+            <Title text={'Work'} />
+            {/* <H2>Work</H2> */}
             <Projects>{projects}</Projects>
           </Work>
+          <Title text={'About'} id="About" />
+          <Title text={'Contact'} id="Contact" />
         </Wrapper>
       </PageTransition>
     </>
