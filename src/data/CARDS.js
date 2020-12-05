@@ -130,7 +130,7 @@ const CARDS = [
     y: 0,
     info: {
       title: "CV Generator",
-      about: "User fills out form to generate a CV",
+      about: "User fills out form to generate a CV User fills out form to generate a CV User fills out form to generate a CV User fills out form to generate a CV User fills out form to generate a CV User fills out form to generate a CVUser fills out form to generate a CV User fills out form to generate a CV ",
       learned: "What I learned",
       technologies: ["React"]
     }

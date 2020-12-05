@@ -25,6 +25,7 @@ const Work = styled.div`
   width: 85%;
   padding: 15px 0;
   background: ${props => props.theme.colors.boxColor};
+  background: white;
   box-shadow: 5px 5px 3px grey, -5px 5px 3px grey;
   z-index: 1;
   margin-bottom: 20px;
@@ -42,7 +43,7 @@ const Work = styled.div`
 const Home = () => {
   const projects = []
   // CARDS.forEach(card => projects.push(<Project card={card} key={card.id} />))
-  CARDS.reverse().forEach(card => projects.push(<ProjectRow card={card} key={card.id} />))
+  CARDS.reverse().forEach((card, index) => projects.push(<ProjectRow card={card} key={card.id} index={index} />))
 
   useEffect(() => {
     if (typeof window !== "undefined") {
