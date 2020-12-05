@@ -8,6 +8,7 @@ import Crossword from "../components/Crossword"
 import PageTransition from 'gatsby-plugin-page-transitions';
 import SEO from '../components/seo';
 import Title from '../components/Title';
+import Hero from '../components/Hero';
 
 const Wrapper = styled.div`
   display: flex;
@@ -81,7 +82,10 @@ const Home = () => {
       <SEO title="Home" />
       <PageTransition>
         <Wrapper>
-          <Crossword />
+          <div>
+          <Hero />
+          {/* <Crossword /> */}
+          </div>
           <Work>
             <Title text={'Work'} />
             {/* <H2>Work</H2> */}

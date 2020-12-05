@@ -97,9 +97,11 @@ const LargeTitle = styled.h2`
   @media only screen and (min-width: 768px) {
     display: block;
     font-size: 2em;
+    text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 15px;
-    text-decoration: underline;
+    margin: 0 auto;
+    /* text-decoration: underline; */
   }
 `;
 
