@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   color: #474542;
+  background: #474542;
 `
 
 const Projects = styled.div`
