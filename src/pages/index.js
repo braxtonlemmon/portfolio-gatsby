@@ -21,15 +21,33 @@ const Projects = styled.div`
   justify-content: center;
 `
 
+// const Work = styled.div`
+//   width: 85%;
+//   padding: 15px 0;
+//   background: ${props => props.theme.colors.boxColor};
+//   background: white;
+//   box-shadow: 5px 5px 3px grey, -5px 5px 3px grey;
+//   z-index: 1;
+//   margin-bottom: 20px;
+//   @media only screen and (min-width: 43em) {
+//     width: 90%;
+//   }
+//   @media only screen and (min-width: 64em) {
+//     width: 80%;
+//   }
+//   @media only screen and (min-width: 86em) {
+//     width: 75%;
+//   }
+// `
 const Work = styled.div`
-  width: 85%;
+  width: 100%;
   padding: 15px 0;
   background: ${props => props.theme.colors.boxColor};
   background: white;
-  box-shadow: 5px 5px 3px grey, -5px 5px 3px grey;
+  /* box-shadow: 5px 5px 3px grey, -5px 5px 3px grey; */
   z-index: 1;
   margin-bottom: 20px;
-  @media only screen and (min-width: 43em) {
+  /* @media only screen and (min-width: 43em) {
     width: 90%;
   }
   @media only screen and (min-width: 64em) {
@@ -37,7 +55,7 @@ const Work = styled.div`
   }
   @media only screen and (min-width: 86em) {
     width: 75%;
-  }
+  } */
 `
 
 const Home = () => {
