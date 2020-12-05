@@ -5,7 +5,7 @@ import BigName from './BigName';
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 30px;
   height: 100%;

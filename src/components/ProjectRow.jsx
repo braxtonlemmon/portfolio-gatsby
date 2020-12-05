@@ -100,7 +100,7 @@ const LargeTitle = styled.h2`
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 15px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* text-decoration: underline; */
   }
 `;

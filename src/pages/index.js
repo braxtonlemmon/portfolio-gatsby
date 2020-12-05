@@ -9,6 +9,8 @@ import PageTransition from 'gatsby-plugin-page-transitions';
 import SEO from '../components/seo';
 import Title from '../components/Title';
 import Hero from '../components/Hero';
+import Work from '../components/Work';
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -43,25 +45,25 @@ const Projects = styled.div`
 //     width: 75%;
 //   }
 // `
-const Work = styled.div`
-  width: 100%;
-  padding: 15px 0;
-  background: ${props => props.theme.colors.boxColor};
-  background: white;
-  background: #f4ebdd;
-  /* box-shadow: 5px 5px 3px grey, -5px 5px 3px grey; */
-  z-index: 1;
-  margin-bottom: 20px;
-  /* @media only screen and (min-width: 43em) {
-    width: 90%;
-  }
-  @media only screen and (min-width: 64em) {
-    width: 80%;
-  }
-  @media only screen and (min-width: 86em) {
-    width: 75%;
-  } */
-`
+// const Work = styled.div`
+//   width: 100%;
+//   padding: 15px 0;
+//   background: ${props => props.theme.colors.boxColor};
+//   background: white;
+//   background: #f4ebdd;
+//   /* box-shadow: 5px 5px 3px grey, -5px 5px 3px grey; */
+//   z-index: 1;
+//   margin-bottom: 20px;
+//   /* @media only screen and (min-width: 43em) {
+//     width: 90%;
+//   }
+//   @media only screen and (min-width: 64em) {
+//     width: 80%;
+//   }
+//   @media only screen and (min-width: 86em) {
+//     width: 75%;
+//   } */
+// `
 
 const Home = () => {
   const projects = []
@@ -82,15 +84,13 @@ const Home = () => {
       <SEO title="Home" />
       <PageTransition>
         <Wrapper>
-          <div>
           <Hero />
-          {/* <Crossword /> */}
-          </div>
-          <Work>
-            <Title text={'Work'} />
+          <Work/>
+          {/* <Work> */}
+            {/* <Title text={'Work'} /> */}
             {/* <H2>Work</H2> */}
-            <Projects>{projects}</Projects>
-          </Work>
+            {/* <Projects>{projects}</Projects> */}
+          {/* </Work> */}
           <Title text={'About'} id="About" />
           <Title text={'Contact'} id="Contact" />
         </Wrapper>

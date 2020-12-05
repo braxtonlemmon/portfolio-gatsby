@@ -35,6 +35,7 @@ module.exports = {
       options: {
         fonts: [
           'Open Sans',
+          'Nerko One'
         ],
         display: 'swap'
       }

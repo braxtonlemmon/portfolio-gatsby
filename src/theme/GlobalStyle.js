@@ -7,6 +7,7 @@ export const theme = {
            linkColor: "#551a91",
            fadedDark: "#464646",
            header: "#3d3d3d",
+           work: "#f4ebdd"
          },
          fontSize: {
            paragraph: "1.3em",
