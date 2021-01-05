@@ -102,24 +102,36 @@ const Header = (props) => {
       </Link>
       { width >= breakpoint && 
         <TopNav>
+          <Link to="/">
+            <NavButton top>Home</NavButton>
+          </Link>
+          <ScrollLink
+            to={"work-section"}
+            smooth={false}
+          >
+            <NavButton top>Work</NavButton>
+          </ScrollLink>
           <ScrollLink
             to={"about-section"}
             smooth={false}
           >
             <NavButton top>About</NavButton>
           </ScrollLink>
-          <Link to="/">
-            <NavButton top>Home</NavButton>
-          </Link>
-          <Link to="/Music">
+          <ScrollLink
+            to={"contact-section"}
+            smooth={false}
+          >
+            <NavButton top>Contact</NavButton>
+          </ScrollLink>
+          {/* <Link to="/Music">
             <NavButton top>Music</NavButton>
-          </Link>
+          </Link> */}
           {/* <Link to="/About">
             <NavButton top>About</NavButton>
           </Link> */}
-          <Link to="/Contact">
+          {/* <Link to="/Contact">
             <NavButton top>Contact</NavButton>
-          </Link>
+          </Link> */}
         </TopNav>
       }
     </HeaderBar>

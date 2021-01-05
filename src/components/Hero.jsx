@@ -7,9 +7,14 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   gap: 30px;
   height: 100%;
   width: 100%;
+  #work-section {
+    position: absolute;
+    bottom: 60px;
+  }
 `;
 
 function Hero() {
@@ -17,6 +22,7 @@ function Hero() {
     <Wrapper>
       <BigName />
       <Crossword />
+      <div id="work-section"></div>
     </Wrapper>
   )
 }
