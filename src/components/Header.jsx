@@ -5,6 +5,7 @@ import styled from "styled-components";
 import NavButton from "./NavButton";
 import { Link , useStaticQuery, graphql } from "gatsby";
 import Img from 'gatsby-image';
+import { Link as ScrollLink } from 'react-scroll';
 
 const HeaderBar = styled.header`
   font-family: 'Open Sans', sans-serif;
@@ -101,15 +102,21 @@ const Header = (props) => {
       </Link>
       { width >= breakpoint && 
         <TopNav>
+          <ScrollLink
+            to={"about-section"}
+            smooth={false}
+          >
+            <NavButton top>About</NavButton>
+          </ScrollLink>
           <Link to="/">
             <NavButton top>Home</NavButton>
           </Link>
           <Link to="/Music">
             <NavButton top>Music</NavButton>
           </Link>
-          <Link to="/About">
+          {/* <Link to="/About">
             <NavButton top>About</NavButton>
-          </Link>
+          </Link> */}
           <Link to="/Contact">
             <NavButton top>Contact</NavButton>
           </Link>

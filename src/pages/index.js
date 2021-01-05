@@ -10,7 +10,7 @@ import SEO from '../components/seo';
 import Title from '../components/Title';
 import Hero from '../components/Hero';
 import Work from '../components/Work';
-
+import About from '../components/About';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   align-items: center;
   color: #474542;
   background: #474542;
+  background: green;
 `
 
 const Projects = styled.div`
@@ -91,7 +92,7 @@ const Home = () => {
             {/* <H2>Work</H2> */}
             {/* <Projects>{projects}</Projects> */}
           {/* </Work> */}
-          <Title text={'About'} id="About" />
+          <About/>
           <Title text={'Contact'} id="Contact" />
         </Wrapper>
       </PageTransition>

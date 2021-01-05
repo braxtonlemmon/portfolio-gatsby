@@ -28,6 +28,7 @@ function Work() {
           <ProjectRow card={card} key={card.id} />  
         )}  
       </Projects>
+      <div id="about-section"></div>
     </Wrapper>
   )
 }
