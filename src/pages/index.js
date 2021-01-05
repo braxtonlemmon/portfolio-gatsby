@@ -11,6 +11,7 @@ import Title from '../components/Title';
 import Hero from '../components/Hero';
 import Work from '../components/Work';
 import About from '../components/About';
+import Contact from '../components/Contact';
 
 const Wrapper = styled.div`
   display: flex;
@@ -93,7 +94,7 @@ const Home = () => {
             {/* <Projects>{projects}</Projects> */}
           {/* </Work> */}
           <About/>
-          <Title text={'Contact'} id="Contact" />
+          <Contact />
         </Wrapper>
       </PageTransition>
     </>

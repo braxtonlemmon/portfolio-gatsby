@@ -71,6 +71,7 @@ function About() {
         <h3>What I Do</h3>
         <HobbySlider />
       </AboutBox>
+      <div id="contact-section"></div>
     </AboutWrapper>
   )
 }

@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background: #f4ebdd;
-  padding: 20px 0;
+  padding: 20px 0 40px 0;
 `;
 
 const Projects = styled.div`
