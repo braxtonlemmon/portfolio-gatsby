@@ -123,18 +123,28 @@ const CornerLogo = styled.div`
   }
 `;
 
-const MobileMenu = styled.div`
-  background: white;
+const MobileMenuWrapper = styled.div`
   position: fixed;
-  left: 30%;
+  left: 0;
   right: 0;
-  bottom: 0;
   top: 0;
+  bottom: 0;
+  background: none;
   z-index: 450;
-  display: ${props => props.show ? 'grid' : 'none'};
-  padding-top: 100px;
+  display: ${props => props.show ? 'flex' : 'none'};
+  justify-content: flex-end;
+`;
+
+const MobileMenu = styled.div`
+  width: 60%;
+  height: 100%;
+  background: white;
+  padding-top: 90px;
+  display: grid;
   grid-auto-flow: row;
-  gap: 20px;
+  gap: 25px;
+  font-size: 1.5em;
+  padding-left: 20px;
   align-content: flex-start;
 `;
 
@@ -208,6 +218,10 @@ function Header () {
   
   const handleHamburgerClick = () => {
     setShowMenu(prev => !prev);
+  }
+
+  const handleMenuButtonClick = () => {
+    setShowMenu(false);
   }
 
   return (
@@ -285,20 +299,29 @@ function Header () {
           </ScrollLink>
         </CornerLogo>
       }
-      <MobileMenu id="mobile-menu" show={showMenu}>
-        <ScrollLink
-          to={'work-section'}
-          smooth={false}
-        >Work</ScrollLink>
-        <ScrollLink
-          to={'about-section'}
-          smooth={false}
-        >About</ScrollLink>
-        <ScrollLink
-          to={'contact-section'}
-          smooth={false}
-        >Contact</ScrollLink>
-      </MobileMenu> 
+      <MobileMenuWrapper 
+        id="mobile-menu" 
+        show={showMenu}
+        onClick={handleMenuButtonClick}  
+      >
+        <MobileMenu>
+          <ScrollLink
+            to={'work-section'}
+            smooth={false}
+            onClick={handleMenuButtonClick}
+            >Work</ScrollLink>
+          <ScrollLink
+            to={'about-section'}
+            smooth={false}
+            onClick={handleMenuButtonClick}
+          >About</ScrollLink>
+          <ScrollLink
+            to={'contact-section'}
+            smooth={false}
+            onClick={handleMenuButtonClick}
+          >Contact</ScrollLink>
+        </MobileMenu>
+      </MobileMenuWrapper> 
     </>
   )
 }
