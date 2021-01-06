@@ -4,6 +4,7 @@ import  { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Link as ScrollLink } from 'react-scroll';
 import Hamburger from './Hamburger';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 const LargeHeader = styled.header`
   width: 100%;
@@ -95,7 +96,7 @@ const SmallHeader = styled.header`
   opacity: 0.2;
   animation: ${fadeIn} 200ms forwards;
   h2 {
-    font-size: 1.3em;
+    font-size: 1.8em;
   }
 `;
 
@@ -116,28 +117,66 @@ const CornerLogo = styled.div`
   animation: ${cornerFadeIn} 200ms forwards;
   cursor: pointer;
   transition: transform 200ms ease;
-  z-index: 500;
+  z-index: 400;
   &:hover {
     transform: rotate(-10deg);
   }
 `;
 
+const MobileMenu = styled.div`
+  background: white;
+  position: fixed;
+  left: 30%;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 450;
+  display: ${props => props.show ? 'grid' : 'none'};
+  padding-top: 100px;
+  grid-auto-flow: row;
+  gap: 20px;
+  align-content: flex-start;
+`;
+
 function Header () {
   const [smallVisible, setSmallVisible] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [menu, setMenu] = useState();
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const theMenu = document.querySelector('#mobile-menu');
+      setMenu(theMenu);
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
       const largeHeader = document.getElementById('large-header');
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-          entry.isIntersecting ? setSmallVisible(false) : setSmallVisible(true);
+          if (entry.isIntersecting) {
+            setSmallVisible(false);
+          } else {
+            setSmallVisible(true);
+          }
         })
       });
       observer.observe(largeHeader);
       return () => observer.unobserver(largeHeader);
     }
   }, []);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      if (showMenu) {
+        disableBodyScroll(menu);
+      } else {
+        enableBodyScroll(menu)
+      }
+    }
+    // return () => clearAllBodyScrollLocks()
+  }, [showMenu])
 
   const data = useStaticQuery(
     graphql`
@@ -246,6 +285,20 @@ function Header () {
           </ScrollLink>
         </CornerLogo>
       }
+      <MobileMenu id="mobile-menu" show={showMenu}>
+        <ScrollLink
+          to={'work-section'}
+          smooth={false}
+        >Work</ScrollLink>
+        <ScrollLink
+          to={'about-section'}
+          smooth={false}
+        >About</ScrollLink>
+        <ScrollLink
+          to={'contact-section'}
+          smooth={false}
+        >Contact</ScrollLink>
+      </MobileMenu> 
     </>
   )
 }
