@@ -39,7 +39,7 @@ const Hamburger = styled.div`
       transform: rotate(-28deg);
     }
   }
-  @media (min-width: 730px) {
+  @media (min-width: 680px) {
     display: none;
   }
 `

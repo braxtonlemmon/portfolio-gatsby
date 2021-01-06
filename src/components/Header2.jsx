@@ -13,7 +13,14 @@ const LargeHeader = styled.header`
   align-items: center;
   justify-content: flex-start;
   background: #fff;
+  @media (min-width: 550px) {
+    justify-content: center;
+    height: 120px;
+  }
   @media (min-width: 768px) {
+    height: 220px;
+  }
+  @media (min-width: 1100px) {
     height: 300px;
   }
 `;
@@ -23,13 +30,33 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
+  @media (min-width: 550px) {
+    justify-content: center;
+  }
+  @media (min-width: 768px) {
+    align-items: flex-end;
+    padding: 0 20px;
+  }
+  @media (min-width: 1100px) {
+    align-items: center;
+  }
+  #large-nav-links {
+    @media (min-width: 768px) {
+      font-size: 1.6em;
+      gap: 20px;
+    }
+  }
 `;
 
 const BigName = styled.h1`
   font-size: 1.5em;
   text-align: center;
+  @media (min-width: 400px) {
+    font-size: 1.9em;
+  }
   @media (min-width: 768px) {
-    font-size: 3em;
+    font-size: 3.3em;
   }
   @media (min-width: 1300px) {
     font-size: 5em;
@@ -54,10 +81,10 @@ const NavLinks = styled.nav`
 
 const BigLogo = styled.div`
   position: absolute;
-  left: 40px;
+  left: 30px;
   height: 100%;
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 1100px) {
     display: block;
   }
 `;
@@ -66,7 +93,24 @@ const SmallLogo = styled.div`
   height: 100%;
   display: block;
   margin: 0 10px 0 10px;
+  @media (min-width: 550px) {
+    position: absolute;
+    left: 30px;
+  }
   @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const TabletLogo = styled.div`
+  position: absolute;
+  left: 30px;
+  height: 100%;
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+  @media (min-width: 1100px) {
     display: none;
   }
 `;
@@ -98,6 +142,18 @@ const SmallHeader = styled.header`
   h2 {
     font-size: 1.8em;
   }
+  #small-navbar {
+    display: none;
+    @media (min-width: 680px) {
+      display: grid;
+      font-size: 1.5em;
+      gap: 30px;
+    }
+  }
+  @media (min-width: 680px) {
+    justify-content: space-between;
+    padding-right: 30px;
+  }
 `;
 
 const cornerFadeIn = keyframes`
@@ -118,10 +174,30 @@ const CornerLogo = styled.div`
   cursor: pointer;
   transition: transform 200ms ease;
   z-index: 400;
+  display: none;
   &:hover {
     transform: rotate(-10deg);
   }
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
+
+const TinyCornerLogo = styled.div`
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  opacity: 0.2;
+  animation: ${cornerFadeIn} 200ms forwards;
+  cursor: pointer;
+  transition: transform 200ms ease;
+  z-index: 400;
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
 
 const MobileMenuWrapper = styled.div`
   position: fixed;
@@ -198,6 +274,13 @@ function Header () {
             }
           }
         }
+        tablet: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
+          childImageSharp {
+            fixed(height: 220) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         large: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
           childImageSharp {
             fixed(height: 300) {
@@ -208,6 +291,13 @@ function Header () {
         corner: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
           childImageSharp {
             fixed(height: 100) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        tinyCorner: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
+          childImageSharp {
+            fixed(height: 50) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -227,6 +317,12 @@ function Header () {
   return (
     <>
       <LargeHeader id="large-header">
+        <SmallLogo>
+          <Img
+            fixed={data.corner.childImageSharp.fixed}
+            alt="logo"
+          />
+        </SmallLogo>
         <BigLogo>
           <Img
             id="big-logo"
@@ -234,15 +330,15 @@ function Header () {
             alt="Large logo for Braxton Lemmon Development"
           />
         </BigLogo>
-        <SmallLogo>
+        <TabletLogo>
           <Img
-            fixed={data.corner.childImageSharp.fixed}
+            fixed={data.tablet.childImageSharp.fixed}
             alt="logo"
           />
-        </SmallLogo>
+        </TabletLogo>
         <Content>
           <BigName>Braxton Lemmon</BigName>
-          <NavLinks>
+          <NavLinks id="large-nav-links">
             <ScrollLink
               to={'work-section'}
               smooth={false}
@@ -269,7 +365,7 @@ function Header () {
               <div className={showMenu ? "line3 view" : "line3"}></div>
             </div>
           </Hamburger>
-          {/* <NavLinks>
+          <NavLinks id="small-navbar">
             <ScrollLink
               to={'work-section'}
               smooth={false}
@@ -282,22 +378,36 @@ function Header () {
               to={'contact-section'}
               smooth={false}
             >Contact</ScrollLink>
-          </NavLinks> */}
+          </NavLinks>
         </SmallHeader>
       }
       {
         smallVisible &&
-        <CornerLogo>
-          <ScrollLink
-            to={'large-header'}
-            smooth={false}
-          >
-            <Img
-              fixed={data.corner.childImageSharp.fixed}
-              alt="logo"
-            />
-          </ScrollLink>
-        </CornerLogo>
+        <>
+          <CornerLogo>
+            <ScrollLink
+              to={'large-header'}
+              smooth={false}
+            >
+              <Img
+                fixed={data.corner.childImageSharp.fixed}
+                alt="logo"
+              />
+            </ScrollLink>
+          </CornerLogo>
+          <TinyCornerLogo>
+            <ScrollLink
+              to={'large-header'}
+              smooth={false}
+            >
+              <Img
+                fixed={data.tinyCorner.childImageSharp.fixed}
+                alt="logo"
+              />
+            </ScrollLink>
+
+          </TinyCornerLogo>
+        </>
       }
       <MobileMenuWrapper 
         id="mobile-menu" 
