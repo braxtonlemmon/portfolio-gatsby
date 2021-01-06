@@ -3,21 +3,36 @@ import styled, { keyframes } from 'styled-components';
 import  { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Link as ScrollLink } from 'react-scroll';
+import Hamburger from './Hamburger';
 
 const LargeHeader = styled.header`
   width: 100%;
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 300px;
+  justify-content: flex-start;
   background: #fff;
+  @media (min-width: 768px) {
+    height: 300px;
+  }
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const BigName = styled.h1`
-  font-size: 5em;
+  font-size: 1.5em;
   text-align: center;
+  @media (min-width: 768px) {
+    font-size: 3em;
+  }
+  @media (min-width: 1300px) {
+    font-size: 5em;
+  }
 `;
 
 const NavLinks = styled.nav`
@@ -25,10 +40,10 @@ const NavLinks = styled.nav`
   justify-content: center;
   align-items: center;
   grid-auto-flow: column;
-  gap: 20px;
+  gap: 12px;
   margin: 20px 0;
   a {
-    font-size: 2em;
+    font-size: 1em;
     cursor: pointer;
     &:hover {
       text-decoration: underline;
@@ -40,6 +55,19 @@ const BigLogo = styled.div`
   position: absolute;
   left: 40px;
   height: 100%;
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
+
+const SmallLogo = styled.div`
+  height: 100%;
+  display: block;
+  margin: 0 10px 0 10px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const fadeIn = keyframes`
@@ -53,8 +81,11 @@ const fadeIn = keyframes`
 
 const SmallHeader = styled.header`
   width: 100%;
+  height: 55px;
+  padding-left: 15px;
+  position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   position: fixed;
   top: 0;
@@ -64,7 +95,7 @@ const SmallHeader = styled.header`
   opacity: 0.2;
   animation: ${fadeIn} 200ms forwards;
   h2 {
-    font-size: 2em;
+    font-size: 1.3em;
   }
 `;
 
@@ -85,6 +116,7 @@ const CornerLogo = styled.div`
   animation: ${cornerFadeIn} 200ms forwards;
   cursor: pointer;
   transition: transform 200ms ease;
+  z-index: 500;
   &:hover {
     transform: rotate(-10deg);
   }
@@ -92,6 +124,7 @@ const CornerLogo = styled.div`
 
 function Header () {
   const [smallVisible, setSmallVisible] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -134,6 +167,10 @@ function Header () {
     `
   )
   
+  const handleHamburgerClick = () => {
+    setShowMenu(prev => !prev);
+  }
+
   return (
     <>
       <LargeHeader id="large-header">
@@ -144,26 +181,14 @@ function Header () {
             alt="Large logo for Braxton Lemmon Development"
           />
         </BigLogo>
-        <BigName>Braxton Lemmon</BigName>
-        <NavLinks>
-          <ScrollLink
-            to={'work-section'}
-            smooth={false}
-          >Work</ScrollLink>
-          <ScrollLink
-            to={'about-section'}
-            smooth={false}
-          >About</ScrollLink>
-          <ScrollLink
-            to={'contact-section'}
-            smooth={false}
-          >Contact</ScrollLink>
-        </NavLinks>
-      </LargeHeader>
-      {
-        smallVisible &&
-        <SmallHeader>
-          <h2>Braxton Lemmon</h2>
+        <SmallLogo>
+          <Img
+            fixed={data.corner.childImageSharp.fixed}
+            alt="logo"
+          />
+        </SmallLogo>
+        <Content>
+          <BigName>Braxton Lemmon</BigName>
           <NavLinks>
             <ScrollLink
               to={'work-section'}
@@ -178,6 +203,33 @@ function Header () {
               smooth={false}
             >Contact</ScrollLink>
           </NavLinks>
+        </Content>
+      </LargeHeader>
+      {
+        smallVisible &&
+        <SmallHeader>
+          <h2>Braxton Lemmon</h2>
+          <Hamburger onClick={handleHamburgerClick}>
+            <div className="icon">
+              <div className={showMenu ? "line1 view" : "line1"}></div>
+              <div className={showMenu ? "line2 view" : "line2"}></div>
+              <div className={showMenu ? "line3 view" : "line3"}></div>
+            </div>
+          </Hamburger>
+          {/* <NavLinks>
+            <ScrollLink
+              to={'work-section'}
+              smooth={false}
+            >Work</ScrollLink>
+            <ScrollLink
+              to={'about-section'}
+              smooth={false}
+            >About</ScrollLink>
+            <ScrollLink
+              to={'contact-section'}
+              smooth={false}
+            >Contact</ScrollLink>
+          </NavLinks> */}
         </SmallHeader>
       }
       {
