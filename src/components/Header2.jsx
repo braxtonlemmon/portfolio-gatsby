@@ -41,10 +41,10 @@ const NavLinks = styled.nav`
   justify-content: center;
   align-items: center;
   grid-auto-flow: column;
-  gap: 12px;
+  gap: 10px;
   margin: 20px 0;
   a {
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer;
     &:hover {
       text-decoration: underline;
@@ -82,7 +82,7 @@ const fadeIn = keyframes`
 
 const SmallHeader = styled.header`
   width: 100%;
-  height: 55px;
+  height: 60px;
   padding-left: 15px;
   position: relative;
   display: flex;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Hamburger = styled.div`
   position: absolute;
-  top: 15px;
+  top: 18px;
   right: 30px;
   height: 28px;
   width: 28px;
