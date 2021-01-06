@@ -2,7 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from 'styled-components';
 import Footer from './Footer';
-import Header from "./Header";
+// import Header from "./Header";
+import Header from './Header2';
 import { useViewport } from './ViewportProvider';
 
 const Wrapper = styled.div`
@@ -25,7 +26,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Wrapper>
-        <Header width={breakpoint}/>
+        {/* <Header width={breakpoint}/> */}
+        <Header />
         <main>
           {children}
         </main>
