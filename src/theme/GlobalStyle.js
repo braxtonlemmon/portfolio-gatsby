@@ -6,7 +6,9 @@ export const theme = {
            boxColor: "#e9e8e8a3",
            linkColor: "#551a91",
            fadedDark: "#464646",
-           header: "#3d3d3d",
+          //  header: "#3d3d3d",
+          //  header: '#b7b6bc',
+           header: '#fff',
            work: "#f4ebdd"
          },
          fontSize: {

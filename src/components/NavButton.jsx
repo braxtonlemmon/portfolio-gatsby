@@ -5,7 +5,7 @@ const NavButton = styled.button`
   width: 100%;
   padding: 10px 1px;
   background: ${props => (props.top ? "none" : "white")};
-  color: ${props => (props.top ? "white" : "black")};
+  color: ${props => (props.top ? "#003215" : "black")};
   border: none;
   font-size: ${props => (props.top ? "1.5em" : "1em")};
   font-weight: 500;

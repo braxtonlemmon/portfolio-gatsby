@@ -38,6 +38,8 @@ const ContactWrapper = styled.div`
   align-items: center;
   font-size: 1rem;
   padding: 50px 10px;
+  width: 100%;
+  background: white;
   @media only screen and (min-width: 26em) {
     font-size: 1.4rem;
   }

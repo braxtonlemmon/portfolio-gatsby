@@ -7,22 +7,51 @@ import { Link , useStaticQuery, graphql } from "gatsby";
 import Img from 'gatsby-image';
 import { Link as ScrollLink } from 'react-scroll';
 
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const HeaderTop = styled.div`
+  background: ${({ theme }) => theme.colors.header};
+  width: 100%;
+  position: relative;
+  display: grid;
+  justify-content: baseline;
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 0 50px;
+`;
+
+const LargeLemon = styled.div`
+  height: 200px;
+  width: 200px;
+  /* margin: 0 auto; */
+  .large-lemon {
+    height: 100%;
+  }
+`;
+
 const HeaderBar = styled.header`
   font-family: 'Open Sans', sans-serif;
   width: 100%;
   position: relative;
-  margin-bottom: 15px;
-  padding: 10px;
+  position: sticky; 
+  top: 0;
+  /* margin-bottom: 15px; */
+  padding: 5px 10px;
   background: ${({ theme }) => theme.colors.header};
   display: grid;
+  display: flex;
   align-items: center;
+  justify-content: space-around;
   grid-template-columns: 80px 1fr;
   z-index: 88;
-  color: white;
-  box-shadow: 0 2px 2px grey;
+  color: black;
+  /* box-shadow: 0 2px 2px grey; */
 
   @media only screen and (min-width: 768px) {
-    position: fixed;
+    /* position: fixed; */
     grid-template-columns: 120px 1fr 1fr;
   }
   a {
@@ -40,6 +69,7 @@ const HeaderBar = styled.header`
     transition: transform 1s ease-in-out;
     -webkit-tap-highlight-color: transparent;
     outline: none;
+    height: 80px;
     &:hover {
       transform: rotate(360deg);
   }
@@ -47,7 +77,8 @@ const HeaderBar = styled.header`
 `
 
 const MyName = styled(H1)`
-  color: white;
+  color: #003215;
+  margin-left: 30px;
   @media (min-width: 465px) {
     font-size: 2.8em;
   }
@@ -55,12 +86,12 @@ const MyName = styled(H1)`
     font-size: 2.2em;
   }
   @media (min-width: 1000px) {
-    font-size: 2.8em;
+    font-size: 5em;
   }
 
-  &:hover {
+  /* &:hover {
     color: #e3ca11;
-  }
+  } */
 `
 
 const TopNav = styled.div`
@@ -72,34 +103,68 @@ const Header = (props) => {
   const { width } = useViewport();
   const breakpoint = 768;
 
-
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "bl_logo_dev_square.png" }) {
+        small: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
           childImageSharp {
-            fixed(height: 100) {
+            fixed(height: 70) {
               ...GatsbyImageSharpFixed
             }
           }
         }
+        large: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
+          childImageSharp {
+            fixed(height: 150) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+
       }
     `
   )
 
+
+      console.log(data);
   return (
-    <HeaderBar>
-      <Link to="/">
-        {/* <Lemon src={lemon} alt="spinning lemon"/> */}
+    <>
+    {/* <HeaderTop>
+      <LargeLemon>
         <Img
-          fixed={data.file.childImageSharp.fixed}
+          fluid={data.file.childImageSharp.fluid}
+          className="large-lemon"
+          alt="logo"
+        />
+      </LargeLemon>
+    </HeaderTop> */}
+    <HeaderTop>
+      <Img
+        fixed={data.large.childImageSharp.fixed}
+        alt=""
+      />
+      <MyName>Braxton Lemmon</MyName>
+    </HeaderTop>
+    <HeaderBar>
+      {/* <Link to="/">
+        <Img
+          fluid={data.file.childImageSharp.fluid}
           alt="spinning lemon"
           className="lemon"
         />
       </Link>
-      <Link to="/Resume" className="name-link">
+    */}
+      {/* <Link to="/Resume" className="name-link">
+      </Link>  */}
+      {/* <Left>
+        <Img
+          fixed={data.small.childImageSharp.fixed}
+          alt=""
+          id="small-logo"
+        />
         <MyName>Braxton Lemmon</MyName>
-      </Link>
+
+      </Left> */}
       { width >= breakpoint && 
         <TopNav>
           <Link to="/">
@@ -135,6 +200,7 @@ const Header = (props) => {
         </TopNav>
       }
     </HeaderBar>
+    </>
   )
 }
 

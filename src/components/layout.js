@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   /* padding-top: 100px; */
   margin-bottom: 60px;
   @media (min-width: 768px) {
-    padding-top: 100px;
+    /* padding-top: 100px; */
   }
 `;
 
@@ -24,8 +24,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header width={breakpoint}/>
       <Wrapper>
+        <Header width={breakpoint}/>
         <main>
           {children}
         </main>
