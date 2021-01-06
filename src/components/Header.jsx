@@ -76,9 +76,9 @@ const Header = (props) => {
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "lemon.png" }) {
+        file(relativePath: { eq: "bl_logo_dev_square.png" }) {
           childImageSharp {
-            fixed(height: 50) {
+            fixed(height: 100) {
               ...GatsbyImageSharpFixed
             }
           }
