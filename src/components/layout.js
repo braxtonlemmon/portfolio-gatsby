@@ -1,10 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from 'styled-components';
-import Footer from './Footer';
-// import Header from "./Header";
 import Header from './Header2';
 import { useViewport } from './ViewportProvider';
+import Footer from './Footer';
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,13 +25,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <Wrapper>
-        {/* <Header width={breakpoint}/> */}
         <Header />
         <main>
           {children}
         </main>
+        <Footer />
       </Wrapper>
-      {/* {width !== null && width < breakpoint && <Footer /> } */}
     </>
   )
 }
