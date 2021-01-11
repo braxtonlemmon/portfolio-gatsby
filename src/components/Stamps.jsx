@@ -6,6 +6,7 @@ import {
   FaGitAlt,
   FaReact,
   FaLinux,
+  FaNodeJs
   // FaNpm,
 } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io"
@@ -26,6 +27,8 @@ const StampWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 800px;
+  margin-bottom: 30px;
 `
 
 const Stamp = styled.div`
@@ -34,12 +37,13 @@ const Stamp = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px;
-  border: 3px solid black;
+  border: 3px solid #494949;
   padding: 5px;
   border-radius: 20px;
   height: 110px;
   width: 110px;
   text-align: center;
+  color: #494949;
 `
 
 const Label = styled.h3`
@@ -72,13 +76,17 @@ const Stamps = () => {
         <FaReact size={size} />
         <Label>React</Label>
       </Stamp>
-      <Stamp>
+      {/* <Stamp>
         <Icon icon={jestIcon} height={size} />
         <Label>Jest</Label>
-      </Stamp>
+      </Stamp> */}
       <Stamp>
         <GrGatsbyjs size={size} />
         <Label>GatsbyJS</Label>
+      </Stamp>
+      <Stamp>
+        <FaNodeJs size={size} />
+        <Label>Node.js</Label>
       </Stamp>
       {/* <Stamp>
         <FaNpm size={size} />
@@ -101,13 +109,13 @@ const Stamps = () => {
         <Label>Ruby</Label>
       </Stamp>
       <Stamp>
-        <Icon icon={languageRubyOnRails} height={size} color="black" />
+        <Icon icon={languageRubyOnRails} height={size} color="#494949" />
         <Label>Ruby on Rails</Label>
       </Stamp>
-      <Stamp>
+      {/* <Stamp>
         <Icon icon={postgresqlIcon} height={size} />
         <Label>PostgreSQL</Label>
-      </Stamp>
+      </Stamp> */}
       <Stamp>
         <FaGitAlt size={size} />
         <Label>Git</Label>

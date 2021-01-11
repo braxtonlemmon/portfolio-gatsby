@@ -45,6 +45,7 @@ const ButtonsBox = styled.div`
     fill: white;
     padding: 8px;
     background: ${({ theme }) => theme.colors.header};
+    background: black;
     border-radius: 50%;
     margin: 0;
     transition: transform 0.2s linear;

@@ -22,6 +22,10 @@ const AboutWrapper = styled.div`
       max-width: 50%;
     }
   }
+  .about-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
 `
 
 const AboutBox = styled.div`
@@ -30,9 +34,8 @@ const AboutBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 15px 0;
-  background: ${({ theme }) => theme.colors.boxColor};
+  background: none;
   padding: 10px;
-  box-shadow: 5px 5px 3px grey, -5px 5px 3px grey;
   @media screen and (min-width: 700px) {
     max-width: 70%;
   }
@@ -59,18 +62,13 @@ function About() {
   return (
     <AboutWrapper>
       <Title text={'About'} id="About-section" />
-      {/* <AboutBox bio> */}
-        {/* <h3>Bio</h3> */}
         <Bio />
-      {/* </AboutBox> */}
-      {/* <TechnologyBox> */}
-        <h3>Technologies</h3>
+        <h3 className="about-title">Technologies I Use...</h3>
         <Stamps />
-      {/* </TechnologyBox> */}
-      <AboutBox className="hobbies">
-        <h3>What I Do</h3>
-        <HobbySlider />
-      </AboutBox>
+        <AboutBox className="hobbies">
+          <h3 className="about-title">What I Do...</h3>
+          <HobbySlider />
+        </AboutBox>
       <div id="contact-section"></div>
     </AboutWrapper>
   )

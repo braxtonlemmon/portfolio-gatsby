@@ -75,19 +75,6 @@ const About = () => {
       <PageTransition>
         <H2>About</H2>
         <AboutWrapper>
-          <AboutBox bio>
-            <H3>Bio</H3>
-            <Bio />
-          </AboutBox>
-          <TechnologyBox>
-            <H3>Technologies</H3>
-            <Stamps />
-          </TechnologyBox>
-          <AboutBox className="hobbies">
-            <H3>What I Do</H3>
-            <HobbySlider />
-            {/* <Hobbies /> */}
-          </AboutBox>
         </AboutWrapper>
       </PageTransition>
     </>
