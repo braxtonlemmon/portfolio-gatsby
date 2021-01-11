@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 import { H2 } from "../components/Headings"
 import MusicAbout from "../components/MusicAbout"
-import PageTransition from 'gatsby-plugin-page-transitions';
 import SEO from '../components/seo';
 
 const Wrapper = styled.div`
@@ -50,7 +49,6 @@ const Music = () => {
   return (
     <>
       <SEO title="Music" />
-      <PageTransition>
         <H2>Music</H2>
         <Wrapper>
           <MusicContent>
@@ -65,7 +63,6 @@ const Music = () => {
             </MusicPlayer>
           </MusicContent>
         </Wrapper>
-      </PageTransition>
     </>
       
   )

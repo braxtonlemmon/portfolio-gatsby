@@ -10,7 +10,6 @@ import {
   FaFacebookMessenger,
 } from "react-icons/fa"
 import { Link } from "gatsby"
-import PageTransition from 'gatsby-plugin-page-transitions';
 import SEO from '../components/seo';
 
 const Icon = styled.a`
@@ -74,7 +73,6 @@ const Contact = () => {
   return (
     <>
       <SEO title="Contact" />
-      <PageTransition>
         <ContactWrapper>
           <H2>Contact</H2>
           <ContactSection>
@@ -115,7 +113,6 @@ const Contact = () => {
             </Icon>
           </ContactSection>
         </ContactWrapper>
-      </PageTransition>
     </>
   )
 }

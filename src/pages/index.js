@@ -5,7 +5,6 @@ import ProjectRow from "../components/ProjectRow";
 import CARDS from "../data/CARDS.js"
 import { H2 } from "../components/Headings"
 import Crossword from "../components/Crossword"
-import PageTransition from 'gatsby-plugin-page-transitions';
 import SEO from '../components/seo';
 import Title from '../components/Title';
 import Hero from '../components/Hero';

@@ -7,8 +7,6 @@ import Hobbies from "../components/Hobbies"
 import HobbySlider from '../components/HobbySlider';
 import SEO from "../components/seo"
 
-import PageTransition from 'gatsby-plugin-page-transitions';
-
 const AboutWrapper = styled.div`
   margin: 50px 10px;
   display: flex;
@@ -72,11 +70,9 @@ const About = () => {
   return (
     <>
       <SEO title="About" />
-      <PageTransition>
         <H2>About</H2>
         <AboutWrapper>
         </AboutWrapper>
-      </PageTransition>
     </>
   )
 }

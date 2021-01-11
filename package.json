@@ -19,7 +19,6 @@
     "gatsby-plugin-manifest": "^2.4.5",
     "gatsby-plugin-netlify": "^2.3.5",
     "gatsby-plugin-offline": "^3.2.3",
-    "gatsby-plugin-page-transitions": "^1.0.8",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.36",

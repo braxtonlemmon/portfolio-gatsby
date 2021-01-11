@@ -13,12 +13,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-page-transitions',
-      options: {
-        transitionTime: 800,
-      }
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Braxton Lemmon - Web Developer`,
