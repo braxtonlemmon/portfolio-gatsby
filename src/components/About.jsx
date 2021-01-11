@@ -66,7 +66,7 @@ function About() {
         <h3 className="about-title">Technologies I Use...</h3>
         <Stamps />
         <AboutBox className="hobbies">
-          <h3 className="about-title">What I Do...</h3>
+          <h3 className="about-title">If I'm not coding...</h3>
           <HobbySlider />
         </AboutBox>
       <div id="contact-section"></div>

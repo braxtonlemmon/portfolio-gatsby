@@ -18,6 +18,11 @@ const ImgWrapper = styled.div`
   width: 100%;
   height: 300px;
   margin: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
   .image {
     animation-delay: 0.1s;
     animation: ${slide} 0.8s ;
@@ -35,35 +40,50 @@ const ButtonsBox = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px 25px;
-  .caret {
-    height: 45px;
-    width: 45px;
-    fill: white;
-    padding: 8px;
-    background: ${({ theme }) => theme.colors.header};
-    background: black;
-    border-radius: 50%;
-    margin: 0;
-    transition: transform 0.2s linear;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.05);
+`;
+
+const CaretBox = styled.div`
+  height: 100%;
+  cursor: pointer;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    .caret {
+      transform: scale(1.07);
     }
   }
+  .caret {
+    height: 100px;
+    /* border: 1px solid white; */
+    width: 100px;
+    position: absolute;
+    fill: rgba(255,255,255,0.7);
+    background: ${({ theme }) => theme.colors.header};
+    background: rgba(0,0,0,0.4);
+    background: none;
+    margin: 0;
+    transition: transform 0.15s linear;
+    cursor: pointer;
+    /* &:hover {
+      transform: scale(1.05);
+    } */
+  }
   .right-caret {
-    padding-left: 11px;
+    right: -20px;
     -webkit-tap-highlight-color: transparent;
-    outline: none;
   }
   .left-caret {
-    padding-right: 11px;
+    left: -20px;
     -webkit-tap-highlight-color: transparent;
-    outline: none;
   }
+
 `;
 
 function HobbySlider() {
@@ -113,14 +133,20 @@ function HobbySlider() {
         alt={node.name.replace(/-/g, ' ').substring(2)}
       />
       <ButtonsBox>
-        <Left 
+        <CaretBox
           onClick={() => handlePrevious()}
-          className="left-caret caret"
-        />
-        <Right 
+        >
+          <Left 
+            className="left-caret caret"
+          />
+        </CaretBox>
+        <CaretBox
           onClick={() => handleNext()}
-          className="right-caret caret" 
-        />
+        >
+          <Right 
+            className="right-caret caret" 
+          />
+        </CaretBox>
       </ButtonsBox>
     </ImgWrapper>
   )
