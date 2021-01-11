@@ -47,15 +47,13 @@ function Title({ text }) {
   return (
     <Wrapper>
       <LinesLeft>
-        {/* <ShortLine></ShortLine> */}
-        <LongLine></LongLine>
-        <ShortLine></ShortLine>
+        <LongLine />
+        <ShortLine />
       </LinesLeft>
       <Text>{text}</Text>
       <LinesRight>
-        {/* <ShortLine></ShortLine> */}
-        <LongLine></LongLine>
-        <ShortLine></ShortLine>
+        <LongLine />
+        <ShortLine />
       </LinesRight>
     </Wrapper>
   )
