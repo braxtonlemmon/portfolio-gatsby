@@ -61,12 +61,19 @@ const ContactWrapper = styled.div`
 `
 const ContactSection = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-bottom: 40px;
   padding: 10px;
-  background: ${props => props.theme.colors.boxColor};
-  box-shadow: 5px 5px 3px grey, -5px 5px 3px grey;
+  h3 {
+    font-size: 1.5em;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 function Contact() {
@@ -75,43 +82,49 @@ function Contact() {
   return (
     <ContactWrapper>
       <Title text={'Contact'} id="Contact" />
-      <ContactSection>
-        <Icon href="mailto:braxtonlemmon@gmail.com" target="_blank">
-          <FiMail size={size} />
-        </Icon>
-        <SiteLink href="mailto:braxtonlemmon@gmail.com" target="_blank">
-          braxtonlemmon@gmail.com
-        </SiteLink>
-      </ContactSection>
-      <ContactSection>
-        <p className="resume">Resume:</p>
-        <Link to="/Resume" className="view">
-          <p>View</p>
-        </Link>
-        <SiteLink
-          href={`${process.env.PUBLIC_URL}/braxton_lemmon_resume.pdf`}
-          download
-        >
-          <p>Download</p>
-        </SiteLink>
-      </ContactSection>
-      <ContactSection>
-        <Icon href="https://m.me/braxton.lemmon" target="_blank">
-          <FaFacebookMessenger size={size} />
-        </Icon>
-        <Icon href="https://twitter.com/braxtonlemmon" target="_blank">
-          <FaTwitter size={size} />
-        </Icon>
-        <Icon href="https://linkedin.com/in/braxtonlemmon/" target="_blank">
-          <FaLinkedinIn size={size} />
-        </Icon>
-        <Icon href="https://github.com/braxtonlemmon" target="_blank">
-          <FaGithub size={size} />
-        </Icon>
-        <Icon href="https://soundcloud.com/expiredmomentum" target="_blank">
-          <FaSoundcloud size={size} />
-        </Icon>
-      </ContactSection>
+        <ContactSection>
+          <h3>Email</h3>
+          <Icon href="mailto:braxtonlemmon@gmail.com" target="_blank">
+            <FiMail size={size} />
+          </Icon>
+          <SiteLink href="mailto:braxtonlemmon@gmail.com" target="_blank">
+            braxtonlemmon@gmail.com
+          </SiteLink>
+        </ContactSection>
+        <ContactSection>
+          <h3>Resume</h3>
+          <div>
+            <Link to="/Resume" className="view">
+              <p>View</p>
+            </Link>
+            <SiteLink
+              href={`${process.env.PUBLIC_URL}/braxton_lemmon_resume.pdf`}
+              download
+            >
+              <p>Download</p>
+            </SiteLink>
+          </div>
+        </ContactSection>
+        <ContactSection>
+          <h3>Other</h3>
+          <div>
+            <Icon href="https://m.me/braxton.lemmon" target="_blank">
+              <FaFacebookMessenger size={size} />
+            </Icon>
+            <Icon href="https://twitter.com/braxtonlemmon" target="_blank">
+              <FaTwitter size={size} />
+            </Icon>
+            <Icon href="https://linkedin.com/in/braxtonlemmon/" target="_blank">
+              <FaLinkedinIn size={size} />
+            </Icon>
+            <Icon href="https://github.com/braxtonlemmon" target="_blank">
+              <FaGithub size={size} />
+            </Icon>
+            <Icon href="https://soundcloud.com/expiredmomentum" target="_blank">
+              <FaSoundcloud size={size} />
+            </Icon>
+          </div>
+        </ContactSection>
     </ContactWrapper>
 
   )
