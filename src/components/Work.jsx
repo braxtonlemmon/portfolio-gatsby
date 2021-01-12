@@ -20,12 +20,13 @@ const Projects = styled.div`
   justify-content: center;
 `
 
-function Work() {
+function Work() {  
+  
   return (
     <Wrapper>
       <Title text={'Work'} />
       <Projects>
-        {CARDS.reverse().map(card => 
+        {CARDS.map(card => 
           <ProjectRow card={card} key={card.id} />  
         )}  
       </Projects>

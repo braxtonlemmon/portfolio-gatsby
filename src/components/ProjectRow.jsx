@@ -14,12 +14,6 @@ const Wrapper = styled.div`
   width: 85%;
   /* background: ${props => props.theme.colors.boxColor};
   background: ${props => props.index % 2 === 0 ? 'white' : props.theme.colors.boxColor}; */
-  video {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    border: 2px solid #ded5c8;
-  }
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
@@ -30,6 +24,27 @@ const Wrapper = styled.div`
 
 const VideoSection = styled.div`
   position: relative;
+  video {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border: 2px solid #ded5c8;
+    @media (min-width: 1200px) {
+      width: 500px;
+    }
+  }
+  #small-video {
+    display: block;
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+  #large-video {
+    display: none;
+    @media (min-width: 1200px) {
+      display: block;
+    }
+  }
 `
 
 const Buttons = styled.div`
@@ -129,10 +144,18 @@ function ProjectRow({ card, index }) {
     <Wrapper index={index}>
       <MobileTitle>{card.info.title}</MobileTitle>
       <VideoSection>
-        <video autoPlay loop muted playsInline>
-          <source src={`${card.img}.webm`} type="video/webm"></source>
-          <source src={`${card.img}.mp4`} type="video/mp4"></source>
-        </video>
+        <div id="small-video">
+          <video autoPlay loop muted playsInline>
+            <source src={`${card.vid_small}.webm`} type="video/webm"></source>
+            <source src={`${card.vid_small}.mp4`} type="video/mp4"></source>
+          </video>
+        </div>
+        <div id="large-video">
+           <video autoPlay loop muted playsInline>
+            <source src={`${card.vid_large}.webm`} type="video/webm"></source>
+            <source src={`${card.vid_large}.mp4`} type="video/mp4"></source>
+          </video>
+        </div>
         {/* <Buttons>
           <Button href={card.github} target="_blank" rel="noreferrer">
             GITHUB
