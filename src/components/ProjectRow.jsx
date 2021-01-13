@@ -181,12 +181,12 @@ function ProjectRow({ card, index }) {
         <LargeTitle>{card.info.title}</LargeTitle>
         <Label>Description</Label>
         <p>{card.info.about}</p>
-        <Label>Learned</Label>
+        <Label>Learned / Practiced</Label>
         <Learned>
           {card.info.learned.map(lesson => {
             return (
               <LearnedItem>
-                <p className="learned-title">{lesson[0]}</p>
+                <p className="learned-title">{lesson[0]}:</p>
                 <p className="learned-content">{lesson[1]}</p>
               </LearnedItem>
             )
