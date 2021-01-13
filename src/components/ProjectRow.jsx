@@ -130,6 +130,18 @@ const Label = styled.h3`
   /* padding: 3px; */
 `;
 
+const Learned = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+`;
+
+const LearnedItem = styled.li`
+  .learned-title {
+    font-weight: bold;
+  }
+`;
+
 const Line = styled.div`
   width: 70%;
   height: 6px;
@@ -170,7 +182,16 @@ function ProjectRow({ card, index }) {
         <Label>Description</Label>
         <p>{card.info.about}</p>
         <Label>Learned</Label>
-        <p>{card.info.learned}</p>
+        <Learned>
+          {card.info.learned.map(lesson => {
+            return (
+              <LearnedItem>
+                <p className="learned-title">{lesson[0]}</p>
+                <p className="learned-content">{lesson[1]}</p>
+              </LearnedItem>
+            )
+          })}
+        </Learned>
         <Label>Technologies</Label>
         <p>{card.info.technologies.join(", ")}</p>
         <Buttons>
