@@ -55,6 +55,7 @@ const Buttons = styled.div`
   /* margin: 0 auto 20px auto; */
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   /* position: absolute;
@@ -68,7 +69,7 @@ const Buttons = styled.div`
 const Button = styled.a`
   /* border-radius: 5px; */
   border: 1px solid #474542;
-  height: 35px;
+  height: 45px;
   width: 85px;
   /* background: red; */
   color: #474542;
@@ -77,6 +78,7 @@ const Button = styled.a`
   justify-content: center;
   align-items: center;
   padding: 0 8px;
+  text-align: center;
   /* margin-right: 20px; */
   &:hover {
     background: pink;
@@ -195,9 +197,18 @@ function ProjectRow({ card, index }) {
         <Label>Technologies</Label>
         <p>{card.info.technologies.join(", ")}</p>
         <Buttons>
-          <Button href={card.github} target="_blank" rel="noreferrer">
+          {
+            card.more_github ?
+            card.more_github.map(item => {
+              return (
+                <Button href={item[1]} target="_blank" rel="noreferrer">{item[0]}</Button>
+              )
+            })
+            : <Button href={card.github} target="_blank" rel="noreferrer">GITHUB</Button>
+          }
+          {/* <Button href={card.github} target="_blank" rel="noreferrer">
             GITHUB
-          </Button>
+          </Button> */}
           <Button href={card.live} target="_blank" rel="noreferrer">
             LIVE
           </Button>

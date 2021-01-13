@@ -8,7 +8,7 @@ const CARDS = [
     id: 0,
     vid_small: "waldo_small",
     vid_large: "waldo_large",
-    github: "https://github.com/braxtonlemmon/visit-leuven",
+    github: "https://github.com/braxtonlemmon/waldo-react-rails",
     live: "https://pumpkin-surprise-94026.herokuapp.com/",
     isLive: true,
     x: 0,
@@ -118,21 +118,46 @@ const CARDS = [
     id: 4,
     vid_small: "peelthegarlic_small",
     vid_large: "peelthegarlic_large",
-    github: "https://github.com/braxtonlemmon/recipe-blog-client",
+    github: "",
+    more_github: [
+      ["CLIENT GITHUB", "https://github.com/braxtonlemmon/recipe-blog-client"],
+      ["ADMIN GITHUB", "https://github.com/braxtonlemmon/recipe-blog-admin"], 
+      ["API GITHUB", "https://github.com/braxtonlemmon/recipe-blog-api"]
+      ],
     live: "https://www.peelthegarlic.com",
     isLive: true,
     x: 0,
     y: 0,
     info: {
       title: "Peel the Garlic",
-      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet justo donec enim diam vulputate ut pharetra sit amet. Elit ut aliquam purus sit amet luctus venenatis lectus. Id donec ultrices tincidunt arcu non sodales neque sodales. Venenatis a condimentum vitae sapien pellentesque habitant morbi. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. A condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Consequat nisl vel pretium lectus quam id. Aliquet nibh praesent tristique magna sit amet purus gravida. Lacinia at quis risus sed. Urna id volutpat lacus laoreet non curabitur gravida arcu.",
+      about: "Peel the Garlic is a recipe website that I maintain and update with a new recipe every Tuesday. A newsletter is sent weekly using SendGrid as the mailing service. The project consists of a public front-end site built with Gatsby, a private front-end administrative site built with Create React App, and a back-end API built using Node.js. The recipe data is stored in a MongoDB database and is managed using Mongoose. The backend API is deployed using Serverless and AWS Lambda. After completing The Odin Project Full Stack curriculum in early 2020, I decided to begin a project that would utilize my development skills and align with my personal interests. I decided to create a recipe website, as I am constantly frustrated with the functionality of many modern recipe blogs. I built Peel the Garlic with the user experience in mind, taking typical features of recipe sites that are often confusing to use and building friendlier and more practical versions of those features.",
       learned: [
         [
-          "blah",
-          "blah"
+          "Serverless functions",
+          "This project introduced me to serverless functions. I learned to use the Serverless CLI to deploy my back-end service as function through AWS Lambda. My knowledge on the subject is introductory, but I am now familiar with the core concepts of serverless functions."
+        ],
+        [
+          "Fetch API",
+          "Both the admin and public client sites are dependent on data from the MongoDB database. I utilize the Fetch API to pull in the needed data. Frequently I ran into errors involving Cross-Origin Resource Sharing (CORS), so I read several technical documents and sought help on Stack Overflow and The Odin Project Discord to resolve the errors. "
+        ],
+        [
+          "Authentication",
+          "To keep my administrative portal private, I used Passport in the Node.js backend to implement authentication. To prepare, I read through the Passport documentation and followed several coding tutorials. Ultimately I went with the JSON Web Token strategy and used the Fetch API in the admin React app to search for the token."
+        ],
+        [
+          "Model View Contoller (MVC) architecture",
+          "When I began learning Ruby on Rails in 2019, I was introduced to the model-view-controller design pattern. I practiced building several projects in Rails using an MVC architecture. For the Peel the Garlic Node.js backend I decided to structure my files using a similar MVC pattern."
+        ],
+        [
+          "Nodemailer",
+          "While it would have been much easier to use a service like Netlify's form handling for Peel the Garlic's contact page, I decided to build and handle my own contact form using the Nodemailer module. This involved setting up a hosted Namecheap email address, and creating a mailer in my API to send the user form data in an email to my associated email inbox."
+        ],
+        [
+          "Web design",
+          "In making a website to host and showcase my personal recipes, I put a lot of effort into the visual components and user interaction on the website. I briefly studied color theory, the importance of a typographic scale, and used a very helpful guide put out by Smashing Magazine titled 'Smart Interface Design Patterns'. Through the use of the Intersection Observer API, keyframe animation, and page transitions, I was able to construct a front-end product that is both pleasing to look at and interact with."
         ]
       ],
-      technologies: ["Gatsby.js", "Node.js", "Create React App", "MongoDB"]
+      technologies: ["Gatsby.js", "Node.js", "Create React App", "MongoDB", "Serverless", "AWS Lambda", "SendGrid"]
     }
   },
 
