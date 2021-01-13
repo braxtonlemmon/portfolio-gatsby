@@ -15,7 +15,7 @@ const CARDS = [
     y: 0,
     info: {
       title: "Find Waldo",
-      about: "Visual replication of pitchfork.com",
+      about: "On the Find Waldo website, the user must scroll and click to find Waldo and four other characters. Each session is timed, and the user's time is recorded and displayed on the Top Scores modal if the time ranks among the fastest. Ruby on Rails is used as the backend and utilizes a PostgreSQL database to store the character coordinates and top scores. React is used for the frontend and fetches the stored coordinates and scores upon page load.",
       learned: [
         [
           "Full Stack Development",
@@ -41,7 +41,7 @@ const CARDS = [
     y: 0,
     info: {
       title: "Explore Leuven",
-      about: "Visual replication of pitchfork.com",
+      about: "Explore Leuven is a sample tourism webpage for a town in Belgium. The page consists of a a fixed header, a hero section, a reviews slider, two sections promoting a variety of attractions, and a footer. This was an exercise in composing a webpage with many of the standard sections and components found on modern websites.",
       learned: [
         [
           "Intersection Observer API",
