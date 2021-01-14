@@ -26,12 +26,12 @@ export const theme = {
          },
          fontSize: {
            one: '20.8px',
-           two: '1.33em',
-           three: '1.777em',
-           four: '2.369em',
-           five: '3.157em',
-           six: '4.209em',
-           seven: '5.0em'
+           two: '27.73px',
+           three: '36.96px',
+           four: '49.27px',
+           five: '65.67px',
+           six: '87.54px',
+           seven: '5em'
          },
        }
 
