@@ -282,10 +282,12 @@ const MobileMenu = styled.div`
   padding-top: 90px;
   display: grid;
   grid-auto-flow: row;
-  gap: 25px;
-  font-size: 1.5em;
+  gap: 40px;
   padding-left: 20px;
   align-content: flex-start;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: ${props => props.theme.fontSize.two};
+  text-transform: uppercase;
 `;
 
 function Header () {
