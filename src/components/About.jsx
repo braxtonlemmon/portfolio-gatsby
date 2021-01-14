@@ -28,6 +28,7 @@ const AboutWrapper = styled.div`
     text-transform: uppercase;
     margin: 5px 0;
     margin-bottom: 20px;
+    text-align: center;
     font-size: ${props => props.theme.fontSize.two};
     font-weight: 400;
   }
