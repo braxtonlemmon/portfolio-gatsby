@@ -14,7 +14,7 @@ import Title from '../components/Title';
 
 const Icon = styled.a`
   text-decoration: none;
-  color: #464646;
+  color: #3c3c3c;
   margin: 5px;
   &:hover {
     color: blue;
@@ -28,8 +28,9 @@ const SiteLink = styled.a`
   color: ${props => props.theme.colors.linkColor};
   text-decoration: none;
   margin: 5px;
+  color: #0707c6;
   &:hover {
-    color: blue;
+    color: ${props => props.theme.colors.sandstone};
   }
 `
 const ContactWrapper = styled.div`
@@ -55,8 +56,11 @@ const ContactWrapper = styled.div`
   a {
     text-decoration: none;
     &:hover {
-      color: blue;
+      color: ${props => props.theme.colors.lightgrey};
     }
+  }
+  #contact-section-one {
+    margin-top: 50px;
   }
 `
 const ContactSection = styled.div`
@@ -67,13 +71,22 @@ const ContactSection = styled.div`
   margin-bottom: 40px;
   padding: 10px;
   h3 {
-    font-size: 1.5em;
+    color: ${props => props.theme.colors.ochre};
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 15px 0 10px 0;
+    margin: 5px 0 15px 0;
+    font-size: ${props => props.theme.fontSize.two};
+    font-weight: 400;
   }
   div {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  /* a {
+   color: #3c3c3c;
+  } */
 `
 
 function Contact() {
@@ -82,7 +95,7 @@ function Contact() {
   return (
     <ContactWrapper>
       <Title text={'Contact'} id="Contact" />
-        <ContactSection>
+        <ContactSection id="contact-section-one">
           <h3>Email</h3>
           <Icon href="mailto:braxtonlemmon@gmail.com" target="_blank">
             <FiMail size={size} />
