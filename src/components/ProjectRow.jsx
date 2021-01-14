@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   margin: 15px 0;
   margin: 0;
   padding: 15px;
-  padding: 30px 15px;
+  padding: 30px 0px;
   width: 95%;
   width: 100%;
   width: 85%;
