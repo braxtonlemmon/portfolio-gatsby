@@ -8,7 +8,6 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 
 const LargeHeader = styled.header`
   width: 100%;
-  /* border: 1px solid blue; */
   position: relative;
   display: flex;
   align-items: center;
@@ -16,13 +15,14 @@ const LargeHeader = styled.header`
   background: #fff;
   @media (min-width: 550px) {
     justify-content: center;
-    height: 120px;
+    /* height: 120px; */
   }
   @media (min-width: 768px) {
-    height: 220px;
+    /* height: 220px; */
+    margin-bottom: 15px;
   }
   @media (min-width: 1100px) {
-    height: 300px;
+    /* height: 300px; */
   }
 `;
 
@@ -34,13 +34,16 @@ const Content = styled.div`
   align-items: center;
   align-items: flex-end;
   width: 100%;
+  @media (min-width: 450px) {
+    /* padding-right: 30px; */
+  }
   @media (min-width: 550px) {
     justify-content: center;
     align-items: center;
   }
   @media (min-width: 768px) {
     align-items: flex-end;
-    padding: 0 20px;
+    /* padding: 0 20px; */
   }
   @media (min-width: 1100px) {
     align-items: flex-end;
@@ -49,8 +52,15 @@ const Content = styled.div`
     font-size: 16px;
     gap: 10px;
     @media (min-width: 768px) {
-      font-size: ${props => props.theme.fontSize.three};
+      font-size: ${props => props.theme.fontSize.two};
       gap: 40px;
+      margin-top: 10px;
+    }
+    @media (min-width: 1000px) {
+      font-size: ${props => props.theme.fontSize.three};
+      /* margin-right: 30px; */
+    }
+    @media (min-width: 1400px) {
       margin-right: 30px;
     }
   }
@@ -70,7 +80,7 @@ const BigName = styled.h1`
     line-height: 1.1em;
   }
   @media (min-width: 768px) {
-    font-size: 3.3em;
+    font-size: ${props => props.theme.fontSize.five};
   }
   @media (min-width: 1300px) {
     margin-bottom: 50px;
@@ -105,8 +115,9 @@ const NavLinks = styled.nav`
 `;  
 
 const BigLogo = styled.div`
-  position: absolute;
-  left: 30px;
+  /* position: absolute; */
+  /* left: 30px; */
+  margin-left: 20px;
   height: 100%;
   display: none;
   @media (min-width: 1100px) {
@@ -130,8 +141,9 @@ const SmallLogo = styled.div`
 `;
 
 const TabletLogo = styled.div`
-  position: absolute;
-  left: 30px;
+  /* position: absolute; */
+  /* left: 30px; */
+  padding-left: 15px;
   height: 100%;
   display: none;
   @media (min-width: 768px) {
