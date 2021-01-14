@@ -37,7 +37,7 @@ const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1rem;
+  font-size: ${props => props.theme.fontSize.one};
   padding: 50px 0px;
   width: 100%;
   background: white;
@@ -85,8 +85,10 @@ const ContactSection = styled.div`
     justify-content: center;
   }
   #social-media > * {
-    margin: 0 15px;
-    margin: 0 2px;
+    margin: 0 7px;
+    @media (min-width: 768px) {
+      margin: 0 15px;
+    }
   }
 
   /* a {
