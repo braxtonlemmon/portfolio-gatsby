@@ -12,7 +12,13 @@ export const theme = {
            work: "#f4ebdd"
          },
          fontSize: {
-           paragraph: "1.3em",
+           one: '20.8px',
+           two: '1.33em',
+           three: '1.777em',
+           four: '2.369em',
+           five: '3.157em',
+           six: '4.209em',
+           seven: '5.0em'
          },
        }
 
@@ -29,13 +35,15 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior: smooth;
     overflow-y: scroll;
-    
+    font-family: "Nerko One";
   }
 
   body {
     background: #fafafa;
     background: #474542;
     background: #fff;
+    font-size: 20.8px;
+    line-height: 30px;
   }
 `
 

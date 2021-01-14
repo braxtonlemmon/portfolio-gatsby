@@ -10,7 +10,7 @@ const LargeHeader = styled.header`
   width: 100%;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
   background: #fff;
   @media (min-width: 550px) {
@@ -39,20 +39,27 @@ const Content = styled.div`
     padding: 0 20px;
   }
   @media (min-width: 1100px) {
-    align-items: center;
+    align-items: flex-end;
   }
   #large-nav-links {
     @media (min-width: 768px) {
       font-size: 1.6em;
-      gap: 20px;
+      gap: 40px;
+      margin-right: 30px;
     }
   }
 `;
 
 const BigName = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  @media (min-width: 400px) {
+  font-size: ${props => props.theme.fontSize.seven};
+  text-align: right;
+  font-family: 'Josefin Sans';
+  font-weight: 200;
+  letter-spacing: 15px;
+  margin-bottom: 50px;
+  margin-right: 120px;
+  /* text-transform: uppercase; */
+  /* @media (min-width: 400px) {
     font-size: 1.9em;
   }
   @media (min-width: 768px) {
@@ -60,7 +67,7 @@ const BigName = styled.h1`
   }
   @media (min-width: 1300px) {
     font-size: 5em;
-  }
+  } */
 `;
 
 const NavLinks = styled.nav`
@@ -68,13 +75,18 @@ const NavLinks = styled.nav`
   justify-content: center;
   align-items: center;
   grid-auto-flow: column;
+  font-family: 'Josefin Sans';
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: ${props => props.theme.fontSize.one};
   gap: 10px;
   margin: 20px 0;
   a {
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
     cursor: pointer;
     &:hover {
-      text-decoration: underline;
+      /* text-decoration: underline; */
+      border-bottom: 1px solid black
     }
   }
 `;  
@@ -125,6 +137,8 @@ const fadeIn = keyframes`
 `;
 
 const SmallHeader = styled.header`
+  font-family: 'Josefin Sans';
+  font-weight: bold;
   width: 100%;
   height: 60px;
   padding-left: 15px;
@@ -140,7 +154,8 @@ const SmallHeader = styled.header`
   opacity: 0.2;
   animation: ${fadeIn} 200ms forwards;
   h2 {
-    font-size: 1.8em;
+    font-size: ${props => props.theme.fontSize.three};
+    letter-spacing: 10px;
   }
   #small-navbar {
     display: none;
@@ -337,7 +352,7 @@ function Header () {
           />
         </TabletLogo>
         <Content>
-          <BigName>Braxton Lemmon</BigName>
+          <BigName>BRAXTON LEMMON</BigName>
           <NavLinks id="large-nav-links">
             <ScrollLink
               to={'work-section'}
@@ -357,7 +372,7 @@ function Header () {
       {
         smallVisible &&
         <SmallHeader>
-          <h2>Braxton Lemmon</h2>
+          <h2>BRAXTON LEMMON</h2>
           <Hamburger onClick={handleHamburgerClick}>
             <div className="icon">
               <div className={showMenu ? "line1 view" : "line1"}></div>

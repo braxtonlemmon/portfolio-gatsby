@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   /* min-height: 100vh; */
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   /* padding-top: 100px; */
   margin-bottom: 60px;
   @media (min-width: 768px) {

@@ -117,7 +117,7 @@ const CARDS = [
   {
     id: 4,
     vid_small: "peelthegarlic_small",
-    vid_large: "peelthegarlic_large",
+    vid_large: "peelthegarlic_long",
     github: "",
     more_github: [
       ["CLIENT GITHUB", "https://github.com/braxtonlemmon/recipe-blog-client"],

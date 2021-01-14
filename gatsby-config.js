@@ -29,7 +29,10 @@ module.exports = {
       options: {
         fonts: [
           'Open Sans',
-          'Nerko One'
+          'Nerko One',
+          'Lato',
+          'Poppins',
+          `Josefin Sans\:100,200`
         ],
         display: 'swap'
       }

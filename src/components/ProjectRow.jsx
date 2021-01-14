@@ -93,6 +93,7 @@ const TextSection = styled.div`
   p {
     /* text-align: center; */
     margin-bottom: 20px;
+    margin: 5px;
   }
   @media only screen and (min-width: 768px) {
     align-items: flex-start;
@@ -127,6 +128,7 @@ const Label = styled.h3`
   /* background: black; */
   /* color: white; */
   margin: 15px 0 10px 0;
+  margin: 5px 0;
   font-size: 1.2em;
   font-weight: 600;
   /* padding: 3px; */
@@ -136,6 +138,7 @@ const Learned = styled.ul`
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+  margin: 5px;
 `;
 
 const LearnedItem = styled.li`
@@ -170,14 +173,6 @@ function ProjectRow({ card, index }) {
             <source src={`${card.vid_large}.mp4`} type="video/mp4"></source>
           </video>
         </div>
-        {/* <Buttons>
-          <Button href={card.github} target="_blank" rel="noreferrer">
-            GITHUB
-          </Button>
-          <Button href={card.live} target="_blank" rel="noreferrer">
-            LIVE
-          </Button>
-        </Buttons> */}
       </VideoSection>
       <TextSection>
         <LargeTitle>{card.info.title}</LargeTitle>
