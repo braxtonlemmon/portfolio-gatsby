@@ -29,8 +29,12 @@ const CrosswordContainer = styled.div`
     grid-template-rows: repeat(9, 2.4em);
   }
   @media only screen and (min-width: 1200px) {
-    grid-template-columns: repeat(12, 3.2em);
-    grid-template-rows: repeat(9, 3.2em);
+    grid-template-columns: repeat(12, 2.9em);
+    grid-template-rows: repeat(9, 2.9em);
+  }
+  @media only screen and (min-width: 1400px) {
+    grid-template-columns: repeat(12, 3.1em);
+    grid-template-rows: repeat(9, 3.1em);
   }
 `
 
