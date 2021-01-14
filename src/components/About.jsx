@@ -7,7 +7,7 @@ import Title from '../components/Title';
 
 const AboutWrapper = styled.div`
   /* margin: 50px 10px; */
-  padding: 0 10px 20px 10px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

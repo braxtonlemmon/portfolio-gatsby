@@ -38,7 +38,7 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 1rem;
-  padding: 50px 10px;
+  padding: 50px 0px;
   width: 100%;
   background: white;
   @media only screen and (min-width: 26em) {
@@ -86,6 +86,7 @@ const ContactSection = styled.div`
   }
   #social-media > * {
     margin: 0 15px;
+    margin: 0 2px;
   }
 
   /* a {
