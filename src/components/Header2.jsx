@@ -58,6 +58,7 @@ const BigName = styled.h1`
   letter-spacing: 15px;
   margin-bottom: 50px;
   margin-right: 120px;
+  /* color: #3c3c3c; */
   /* text-transform: uppercase; */
   /* @media (min-width: 400px) {
     font-size: 1.9em;

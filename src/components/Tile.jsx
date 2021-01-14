@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 const TileBox = styled.div`
-  background: ${props => (props.letter ? "black" : "none")};
+  background: ${props => (props.letter ? "#2e2e2e" : "none")};
   background: ${props => {
     if (props.letter) {
-      return "black"
+      return "#2e2e2e"
     } else if (props.accent) {
       return `${props.color}`
       // return `linear-gradient(${props.degree}deg, ${props.color}, ${props.color2})`
@@ -16,7 +16,7 @@ const TileBox = styled.div`
 
   border: ${props => {
     if (props.accent) {
-      return "3px solid black"
+      return "3px solid #2e2e2e"
     } else {
       return "none"
     }
@@ -25,7 +25,7 @@ const TileBox = styled.div`
   @media (min-width: 416px) {
     border: ${props => {
     if (props.accent) {
-      return "4px solid black"
+      return "4px solid #2e2e2e"
     } else {
       return "none"
     }
