@@ -115,8 +115,9 @@ const LargeTitle = styled.h2`
   text-align: center;
   @media only screen and (min-width: 768px) {
     display: block;
-    font-size: ${props => props.theme.fontSize.three};
-    letter-spacing: 9px;
+    font-size: ${props => props.theme.fontSize.four};
+    line-height: 1em;
+    letter-spacing: 6px;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 40px;
@@ -164,11 +165,11 @@ const LearnedItem = styled.li`
 `;
 
 const Line = styled.div`
-  width: 70%;
-  height: 6px;
+  width: 95%;
+  height: 2px;
   border-radius: 3px;
-  background: #ded5c8;
-  margin: 0 auto;
+  background: ${props => props.theme.colors.lightergrey};
+  margin: 22px auto;
 `;
 
 function ProjectRow({ card, index }) {
