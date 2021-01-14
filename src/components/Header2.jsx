@@ -31,8 +31,8 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
   align-items: flex-end;
+  align-items: center;
   width: 100%;
   @media (min-width: 450px) {
     /* padding-right: 30px; */
@@ -42,11 +42,11 @@ const Content = styled.div`
     align-items: center;
   }
   @media (min-width: 768px) {
-    align-items: flex-end;
+    /* align-items: flex-end; */
     /* padding: 0 20px; */
   }
   @media (min-width: 1100px) {
-    align-items: flex-end;
+    /* align-items: flex-end; */
   }
   #large-nav-links {
     font-size: 16px;
@@ -56,7 +56,7 @@ const Content = styled.div`
       gap: 40px;
       margin-top: 10px;
     }
-    @media (min-width: 1000px) {
+    @media (min-width: 1200px) {
       font-size: ${props => props.theme.fontSize.three};
       /* margin-right: 30px; */
     }
@@ -68,23 +68,29 @@ const Content = styled.div`
 
 const BigName = styled.h1`
   font-size: ${props => props.theme.fontSize.two};
-  text-align: right;
   font-family: 'Josefin Sans';
   font-weight: 200;
-  letter-spacing: 15px;
+  text-align: center;
   color: #3c3c3c;
   text-transform: uppercase;
-  padding-top: 10px;
+  padding-top: 20px;
+  letter-spacing: 10px;
   @media (min-width: 380px) {
     font-size: 1.8em;
     line-height: 1.1em;
   }
   @media (min-width: 768px) {
+    letter-spacing: 12px;
+    text-align: center;
     font-size: ${props => props.theme.fontSize.five};
   }
   @media (min-width: 1300px) {
     margin-bottom: 50px;
     margin-right: 120px;
+    letter-spacing: 15px;
+    font-size: ${props => props.theme.fontSize.six};
+  }
+  @media (min-width: 1400px) {
     font-size: ${props => props.theme.fontSize.seven};
   }
 `;
@@ -120,7 +126,7 @@ const BigLogo = styled.div`
   margin-left: 20px;
   height: 100%;
   display: none;
-  @media (min-width: 1100px) {
+  @media (min-width: 1300px) {
     display: block;
   }
 `;
@@ -149,7 +155,7 @@ const TabletLogo = styled.div`
   @media (min-width: 768px) {
     display: block;
   }
-  @media (min-width: 1100px) {
+  @media (min-width: 1300px) {
     display: none;
   }
 `;
@@ -334,7 +340,7 @@ function Header () {
         }
         tablet: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
           childImageSharp {
-            fixed(height: 220) {
+            fixed(height: 190) {
               ...GatsbyImageSharpFixed
             }
           }
