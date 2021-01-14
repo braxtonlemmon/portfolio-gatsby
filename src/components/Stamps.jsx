@@ -110,7 +110,7 @@ const Stamps = () => {
       </Stamp>
       <Stamp>
         <Icon icon={languageRubyOnRails} height={size} color="#494949" />
-        <Label>Ruby on Rails</Label>
+        <Label>Rails</Label>
       </Stamp>
       {/* <Stamp>
         <Icon icon={postgresqlIcon} height={size} />

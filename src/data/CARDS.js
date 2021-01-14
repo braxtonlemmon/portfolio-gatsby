@@ -11,6 +11,7 @@ const CARDS = [
     github: "https://github.com/braxtonlemmon/waldo-react-rails",
     live: "https://pumpkin-surprise-94026.herokuapp.com/",
     isLive: true,
+    last: true,
     x: 0,
     y: 0,
     info: {

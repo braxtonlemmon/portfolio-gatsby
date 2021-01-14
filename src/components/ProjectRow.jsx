@@ -228,7 +228,12 @@ function ProjectRow({ card, index }) {
         </Buttons>
       </TextSection>
     </Wrapper>
-    <Line />
+    {
+      card.last ?
+      null : 
+      <Line />
+    }
+      
     </>
   )
 }

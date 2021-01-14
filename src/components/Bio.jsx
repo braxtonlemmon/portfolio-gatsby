@@ -3,11 +3,13 @@ import styled from "styled-components"
 
 const BioBox = styled.p`
   text-align: center;
-  font-size: ${({ theme }) => theme.fontSize.paragraph};
-  line-height: 1.4em;
+  font-size: ${({ theme }) => theme.fontSize.one};
+  line-height: 30px;
   padding: 15px 25px;
-  max-width: 750px;
+  width: 90%;
+  max-width: 600px;
   margin-bottom: 30px;
+  margin-top: 40px;
   p {
     margin-bottom: 20px;
   }
