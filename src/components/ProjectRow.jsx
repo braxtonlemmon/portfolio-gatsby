@@ -12,13 +12,14 @@ const Wrapper = styled.div`
   width: 95%;
   width: 100%;
   width: 85%;
+  font-size: ${props => props.theme.fontSize.one};
   /* background: ${props => props.theme.colors.boxColor};
   background: ${props => props.index % 2 === 0 ? 'white' : props.theme.colors.boxColor}; */
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    align-items: center;
+    /* align-items: center; */
   }
 `;
 
@@ -70,9 +71,9 @@ const Button = styled.a`
   /* border-radius: 5px; */
   border: 1px solid #474542;
   height: 45px;
-  width: 85px;
+  /* width: 200px; */
   /* background: red; */
-  color: #474542;
+  color: ${props => props.theme.colors.text};
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -81,7 +82,8 @@ const Button = styled.a`
   text-align: center;
   /* margin-right: 20px; */
   &:hover {
-    background: pink;
+    background: ${props => props.theme.colors.text};
+    color: white;
   }
 `
 const TextSection = styled.div`
@@ -90,10 +92,8 @@ const TextSection = styled.div`
   align-items: center;
   /* border: 1px solid red; */
   width: 100%;
-  p {
-    /* text-align: center; */
+  .project-description {
     margin-bottom: 20px;
-    margin: 5px;
   }
   @media only screen and (min-width: 768px) {
     align-items: flex-start;
@@ -112,12 +112,14 @@ const MobileTitle = styled.h2`
 
 const LargeTitle = styled.h2`
   display: none;
+  text-align: center;
   @media only screen and (min-width: 768px) {
     display: block;
-    font-size: 2em;
+    font-size: ${props => props.theme.fontSize.three};
+    letter-spacing: 9px;
     text-transform: uppercase;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
     /* margin: 0 auto; */
     /* text-decoration: underline; */
   }
@@ -127,24 +129,38 @@ const Label = styled.h3`
   /* border: 1px solid black; */
   /* background: black; */
   /* color: white; */
+  color: ${props => props.theme.colors.ochre};
+  letter-spacing: 2px;
+  text-transform: uppercase;
   margin: 15px 0 10px 0;
   margin: 5px 0;
-  font-size: 1.2em;
-  font-weight: 600;
+  font-size: ${props => props.theme.fontSize.two};
+  font-weight: 400;
   /* padding: 3px; */
 `;
 
 const Learned = styled.ul`
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
-  margin: 5px;
+  margin-top: 5px;
+  /* margin-top: 15px; */
+  /* margin: 5px; */
 `;
 
 const LearnedItem = styled.li`
   .learned-title {
-    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-size: ${props => props.theme.fontSize.one};
+    text-transform: uppercase;
+    color: ${props => props.theme.colors.dark};
+    letter-spacing: 2px;
   }
+  .learned-content {
+    margin: 0;
+    padding: 0;
+  }
+  margin-bottom: 18px;
 `;
 
 const Line = styled.div`
@@ -161,6 +177,7 @@ function ProjectRow({ card, index }) {
     <Wrapper index={index}>
       <MobileTitle>{card.info.title}</MobileTitle>
       <VideoSection>
+        <LargeTitle>{card.info.title}</LargeTitle>
         <div id="small-video">
           <video autoPlay loop muted playsInline>
             <source src={`${card.vid_small}.webm`} type="video/webm"></source>
@@ -175,16 +192,16 @@ function ProjectRow({ card, index }) {
         </div>
       </VideoSection>
       <TextSection>
-        <LargeTitle>{card.info.title}</LargeTitle>
+        {/* <LargeTitle>{card.info.title}</LargeTitle> */}
         <Label>Description</Label>
-        <p>{card.info.about}</p>
+        <p className="project-description">{card.info.about}</p>
         <Label>Learned / Practiced</Label>
         <Learned>
           {card.info.learned.map(lesson => {
             return (
               <LearnedItem>
-                <p className="learned-title">{lesson[0]}:</p>
-                <p className="learned-content">{lesson[1]}</p>
+                <span className="learned-title">{lesson[0]} | </span>
+                <span className="learned-content">{lesson[1]}</span>
               </LearnedItem>
             )
           })}

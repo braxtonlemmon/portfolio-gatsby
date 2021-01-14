@@ -16,11 +16,12 @@ export const theme = {
            lightgrey: "#b7b6bc",
            green: "#98a957",
            dark: "#003215",
-           lightgreen: "#003215",
+           lightgreen: "#c4cca7",
            darkgreen: "#5e653b",
            lightergrey: '#ececec',
           //  ochre: '#bc9b5d',
-           ochre: "#947439"
+           ochre: "#947439",
+           text: "#474542"
 
          },
          fontSize: {
