@@ -102,9 +102,12 @@ const TextSection = styled.div`
 `;
 
 const MobileTitle = styled.h2`
-  font-size: 2em;
-  font-weight: 600;
+  font-size: ${props => props.theme.fontSize.two};
+  font-weight: 400;
   margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 6px;
   @media only screen and (min-width: 768px) {
     display: none;
   }
@@ -113,12 +116,12 @@ const MobileTitle = styled.h2`
 const LargeTitle = styled.h2`
   display: none;
   text-align: center;
+  text-transform: uppercase;
   @media only screen and (min-width: 768px) {
     display: block;
     font-size: ${props => props.theme.fontSize.four};
     line-height: 1em;
     letter-spacing: 6px;
-    text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 40px;
     /* margin: 0 auto; */
