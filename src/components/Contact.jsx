@@ -84,6 +84,10 @@ const ContactSection = styled.div`
     align-items: center;
     justify-content: center;
   }
+  #social-media > * {
+    margin: 0 15px;
+  }
+
   /* a {
    color: #3c3c3c;
   } */
@@ -120,7 +124,7 @@ function Contact() {
         </ContactSection>
         <ContactSection>
           <h3>Other</h3>
-          <div>
+          <div id="social-media">
             <Icon href="https://m.me/braxton.lemmon" target="_blank">
               <FaFacebookMessenger size={size} />
             </Icon>

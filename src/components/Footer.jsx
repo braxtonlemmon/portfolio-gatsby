@@ -5,9 +5,12 @@ const Wrapper = styled.footer`
   width: 90%;
   max-width: 800px;
   margin: 0 auto;
-  border-top: 1px solid black;
+  border-top: 1px solid ${props => props.theme.colors.dark};
   padding: 30px 5px;
   text-align: center;
+  font-size: ${props => props.theme.fontSize.one};
+  color: ${props => props.theme.colors.dark};
+  letter-spacing: 2px;
 `;
 
 
