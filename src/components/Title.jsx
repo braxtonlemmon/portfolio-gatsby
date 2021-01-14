@@ -15,10 +15,10 @@ const Wrapper = styled.div`
 
 const Text = styled.h2`
   font-size: ${props => props.theme.fontSize.five};
-  font-weight: 400;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 10px;
-  
+  font-family: 'Josefin Sans', sans-serif;
 `;
 
 const Line = styled.div`
