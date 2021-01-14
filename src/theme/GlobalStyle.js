@@ -9,7 +9,17 @@ export const theme = {
           //  header: "#3d3d3d",
           //  header: '#b7b6bc',
            header: '#fff',
-           work: "#f4ebdd"
+           work: "#f4ebdd",
+           lemon: "#fbe683",
+           golden: "#f3d63d",
+           sandstone: "#78766a",
+           lightgrey: "#b7b6bc",
+           green: "#98a957",
+           dark: "#003215",
+           lightgreen: "#003215",
+           darkgreen: "#5e653b"
+
+
          },
          fontSize: {
            one: '20.8px',

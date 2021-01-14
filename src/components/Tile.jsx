@@ -31,7 +31,7 @@ const TileBox = styled.div`
     }
   }};
   }
-  color: ${props => (props.develop ? "#e0ff5d" : "white")};
+  color: ${props => (props.develop ? props.theme.colors.lemon : "white")};
   height: 100%;
   width: 100%;
   display: flex;

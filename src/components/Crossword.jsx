@@ -10,7 +10,8 @@ const CrosswordContainer = styled.div`
   grid-template-rows: repeat(9, 1.5em);
   justify-self: center;
   padding-bottom: 30px;
-  font-weight: 600;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
 
   @media only screen and (min-width: 26em) {
     grid-template-columns: repeat(12, 2em);
