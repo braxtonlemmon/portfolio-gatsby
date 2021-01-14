@@ -37,19 +37,23 @@ const TileBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3em;
+  font-size: 16px;
   &:hover {
     transform: ${props => (props.letter ? "rotate(10deg)" : "none")};
   }
-  @media only screen and (min-width: 41em) {
+  @media only screen and (min-width: 425px) {
+    font-size: 1em;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 1.3em;
+  }
+  @media only screen and (min-width: 768px) {
     font-size: 1.8em;
   }
-  @media only screen and (min-width: 62em) {
-    font-size: 2.2em;
+  @media only screen and (min-width: 1200px) {
+    font-size: 2.1em;
   }
-  @media only screen and (min-width: 84em) {
-    font-size: 2.5em;
-  }
+
 `
 
 function Tile(props) {

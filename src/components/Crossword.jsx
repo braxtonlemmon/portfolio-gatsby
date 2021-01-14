@@ -6,26 +6,29 @@ import Tile from "./Tile"
 const CrosswordContainer = styled.div`
   display: grid;
   gap: 2px;
-  grid-template-columns: repeat(12, 1.5em);
-  grid-template-rows: repeat(9, 1.5em);
+  grid-template-columns: repeat(12, 1.1em);
+  grid-template-rows: repeat(9, 1.1em);
   justify-self: center;
   padding-bottom: 30px;
   font-weight: 300;
   font-family: 'Poppins', sans-serif;
-
-  @media only screen and (min-width: 26em) {
-    grid-template-columns: repeat(12, 2em);
-    grid-template-rows: repeat(9, 2em);
+  @media only screen and (min-width: 375px) {
+    grid-template-columns: repeat(12, 1.3em);
+    grid-template-rows: repeat(9, 1.3em)
   }
-  @media only screen and (min-width: 41em) {
-    grid-template-columns: repeat(12, 2.5em);
-    grid-template-rows: repeat(9, 2.5em);
+  @media only screen and (min-width: 425px) {
+    grid-template-columns: repeat(12, 1.5em);
+    grid-template-rows: repeat(9, 1.5em);
   }
-  @media only screen and (min-width: 62em) {
-    grid-template-columns: repeat(12, 3em);
-    grid-template-rows: repeat(9, 3em);
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: repeat(12, 1.9em);
+    grid-template-rows: repeat(9, 1.9em);
   }
-  @media only screen and (min-width: 84em) {
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(12, 2.4em);
+    grid-template-rows: repeat(9, 2.4em);
+  }
+  @media only screen and (min-width: 1200px) {
     grid-template-columns: repeat(12, 3.2em);
     grid-template-rows: repeat(9, 3.2em);
   }
