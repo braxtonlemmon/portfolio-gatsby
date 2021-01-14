@@ -17,8 +17,10 @@ export const theme = {
            green: "#98a957",
            dark: "#003215",
            lightgreen: "#003215",
-           darkgreen: "#5e653b"
-
+           darkgreen: "#5e653b",
+           lightergrey: '#ececec',
+          //  ochre: '#bc9b5d',
+           ochre: "#947439"
 
          },
          fontSize: {

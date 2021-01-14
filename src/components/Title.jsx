@@ -4,20 +4,27 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 15px;
+  /* gap: 15px; */
   align-items: center;
+  /* width: 100%; */
   width: 100%;
-  /* border: 1px solid red; */
+  background: ${props => props.theme.colors.lightergrey};
+  color: ${props => props.theme.colors.ochre};
+  padding: 80px 0;
 `;
 
 const Text = styled.h2`
-  font-size: 2.8rem;
-  font-weight: 600;
+  font-size: ${props => props.theme.fontSize.five};
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  
 `;
 
 const Line = styled.div`
   height: 2px;
   background: #474542;
+  background: white;
 `;
 
 const ShortLine = styled(Line)`
@@ -46,15 +53,15 @@ const LinesRight = styled(Lines)`
 function Title({ text }) {
   return (
     <Wrapper>
-      <LinesLeft>
+      {/* <LinesLeft>
         <LongLine />
         <ShortLine />
-      </LinesLeft>
+      </LinesLeft> */}
       <Text>{text}</Text>
-      <LinesRight>
+      {/* <LinesRight>
         <LongLine />
         <ShortLine />
-      </LinesRight>
+      </LinesRight> */}
     </Wrapper>
   )
 }
