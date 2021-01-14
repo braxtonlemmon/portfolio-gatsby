@@ -8,9 +8,10 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 
 const LargeHeader = styled.header`
   width: 100%;
+  /* border: 1px solid blue; */
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
   background: #fff;
   @media (min-width: 550px) {
@@ -26,13 +27,16 @@ const LargeHeader = styled.header`
 `;
 
 const Content = styled.div`
+  /* border: 1px solid blue; */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
+  align-items: flex-end;
   width: 100%;
   @media (min-width: 550px) {
     justify-content: center;
+    align-items: center;
   }
   @media (min-width: 768px) {
     align-items: flex-end;
@@ -42,8 +46,10 @@ const Content = styled.div`
     align-items: flex-end;
   }
   #large-nav-links {
+    font-size: 16px;
+    gap: 10px;
     @media (min-width: 768px) {
-      font-size: 1.6em;
+      font-size: ${props => props.theme.fontSize.three};
       gap: 40px;
       margin-right: 30px;
     }
@@ -51,24 +57,26 @@ const Content = styled.div`
 `;
 
 const BigName = styled.h1`
-  font-size: ${props => props.theme.fontSize.seven};
+  font-size: ${props => props.theme.fontSize.two};
   text-align: right;
   font-family: 'Josefin Sans';
   font-weight: 200;
   letter-spacing: 15px;
-  margin-bottom: 50px;
-  margin-right: 120px;
-  /* color: #3c3c3c; */
-  /* text-transform: uppercase; */
-  /* @media (min-width: 400px) {
-    font-size: 1.9em;
+  color: #3c3c3c;
+  text-transform: uppercase;
+  padding-top: 10px;
+  @media (min-width: 380px) {
+    font-size: 1.8em;
+    line-height: 1.1em;
   }
   @media (min-width: 768px) {
     font-size: 3.3em;
   }
   @media (min-width: 1300px) {
-    font-size: 5em;
-  } */
+    margin-bottom: 50px;
+    margin-right: 120px;
+    font-size: ${props => props.theme.fontSize.seven};
+  }
 `;
 
 const NavLinks = styled.nav`
@@ -81,8 +89,12 @@ const NavLinks = styled.nav`
   text-transform: uppercase;
   font-size: ${props => props.theme.fontSize.one};
   gap: 10px;
-  margin: 20px 0;
+  margin: 10px 0;
+  margin: 0;
+  margin-top: 5px;
+  padding-right: 10px;
   a {
+    /* font-size: 10px; */
     /* font-size: 1.2em; */
     cursor: pointer;
     &:hover {
@@ -103,11 +115,13 @@ const BigLogo = styled.div`
 `;
 
 const SmallLogo = styled.div`
+  /* border: 1px solid blue; */
   height: 100%;
   display: block;
-  margin: 0 10px 0 10px;
+  /* margin: 0 10px 0 10px; */
+  margin-left: 5px;
   @media (min-width: 550px) {
-    position: absolute;
+    /* position: absolute; */
     left: 30px;
   }
   @media (min-width: 768px) {
@@ -155,15 +169,31 @@ const SmallHeader = styled.header`
   opacity: 0.2;
   animation: ${fadeIn} 200ms forwards;
   h2 {
-    font-size: ${props => props.theme.fontSize.three};
-    letter-spacing: 10px;
+    padding-top: 5px;
+    font-size: ${props => props.theme.fontSize.one};
+    letter-spacing: 1px;
+    @media (min-width:500px) {
+      font-size: ${props => props.theme.fontSize.two};
+      letter-spacing: 8px;
+    }
+    @media (min-width: 1000px) {
+      font-size: ${props => props.theme.fontSize.three};
+      letter-spacing: 10px;
+
+    }
   }
   #small-navbar {
     display: none;
+    font-size: ${props => props.theme.fontSize.one};
     @media (min-width: 680px) {
       display: grid;
-      font-size: 1.5em;
       gap: 30px;
+    }
+    @media (min-width: 1000px) {
+      font-size: ${props => props.theme.fontSize.two};
+    }
+    @media (min-width: 1200px) {
+      font-size: ${props => props.theme.fontSize.three};
     }
   }
   @media (min-width: 680px) {
@@ -306,7 +336,7 @@ function Header () {
         }
         corner: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
           childImageSharp {
-            fixed(height: 100) {
+            fixed(height: 90) {
               ...GatsbyImageSharpFixed
             }
           }
