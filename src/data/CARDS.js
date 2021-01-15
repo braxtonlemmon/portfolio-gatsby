@@ -118,12 +118,12 @@ const CARDS = [
   {
     id: 4,
     vid_small: "peelthegarlic_small",
-    vid_large: "peelthegarlic_long",
+    vid_large: "peelthegarlic_large",
     github: "",
     more_github: [
-      ["CLIENT GITHUB", "https://github.com/braxtonlemmon/recipe-blog-client"],
       ["ADMIN GITHUB", "https://github.com/braxtonlemmon/recipe-blog-admin"], 
-      ["API GITHUB", "https://github.com/braxtonlemmon/recipe-blog-api"]
+      ["API GITHUB", "https://github.com/braxtonlemmon/recipe-blog-api"],
+      ["CLIENT GITHUB", "https://github.com/braxtonlemmon/recipe-blog-client"],
       ],
     live: "https://www.peelthegarlic.com",
     isLive: true,

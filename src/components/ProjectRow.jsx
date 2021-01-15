@@ -182,21 +182,24 @@ function ProjectRow({ card, index }) {
       <MobileTitle>{card.info.title}</MobileTitle>
       <VideoSection>
         <LargeTitle>{card.info.title}</LargeTitle>
-        <div id="small-video">
-          <video autoPlay loop muted playsInline>
-            <source src={`${card.vid_small}.webm`} type="video/webm"></source>
-            <source src={`${card.vid_small}.mp4`} type="video/mp4"></source>
-          </video>
-        </div>
-        <div id="large-video">
-           <video autoPlay loop muted playsInline>
-            <source src={`${card.vid_large}.webm`} type="video/webm"></source>
-            <source src={`${card.vid_large}.mp4`} type="video/mp4"></source>
-          </video>
-        </div>
+        <a href={card.live} target="_blank" rel="noopener noreferrer">
+          <div id="small-video">
+            <video autoPlay loop muted playsInline>
+              <source src={`${card.vid_small}.webm`} type="video/webm"></source>
+              <source src={`${card.vid_small}.mp4`} type="video/mp4"></source>
+            </video>
+          </div>
+        </a>
+        <a href={card.live} target="_blank" rel="noopener noreferrer">
+          <div id="large-video">
+             <video autoPlay loop muted playsInline>
+              <source src={`${card.vid_large}.webm`} type="video/webm"></source>
+              <source src={`${card.vid_large}.mp4`} type="video/mp4"></source>
+            </video>
+          </div>
+        </a>
       </VideoSection>
       <TextSection>
-        {/* <LargeTitle>{card.info.title}</LargeTitle> */}
         <Label>Description</Label>
         <p className="project-description">{card.info.about}</p>
         <Label>Learned / Practiced</Label>
