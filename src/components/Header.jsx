@@ -1,107 +1,316 @@
-import React from "react";
-import { useViewport } from './ViewportProvider';
-import { H1 } from "./Headings";
-import styled from "styled-components";
-import NavButton from "./NavButton";
-import { Link , useStaticQuery, graphql } from "gatsby";
+import React, { useState, useEffect } from 'react';
+import styled, { keyframes } from 'styled-components';
+import  { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Link as ScrollLink } from 'react-scroll';
+import Hamburger from './Hamburger';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-const Left = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const HeaderTop = styled.div`
-  background: ${({ theme }) => theme.colors.header};
+const LargeHeader = styled.header`
   width: 100%;
   position: relative;
-  display: grid;
-  justify-content: baseline;
-  grid-auto-flow: column;
-  align-items: center;
-  padding: 0 50px;
-`;
-
-const LargeLemon = styled.div`
-  height: 200px;
-  width: 200px;
-  /* margin: 0 auto; */
-  .large-lemon {
-    height: 100%;
-  }
-`;
-
-const HeaderBar = styled.header`
-  font-family: 'Open Sans', sans-serif;
-  width: 100%;
-  position: relative;
-  position: sticky; 
-  top: 0;
-  /* margin-bottom: 15px; */
-  padding: 5px 10px;
-  background: ${({ theme }) => theme.colors.header};
-  display: grid;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  grid-template-columns: 80px 1fr;
-  z-index: 88;
-  color: black;
-  /* box-shadow: 0 2px 2px grey; */
-
-  @media only screen and (min-width: 768px) {
-    /* position: fixed; */
-    grid-template-columns: 120px 1fr 1fr;
-  }
-  a {
-    text-decoration: none;
-    outline: none;
-  }
-  .name-link {
-    justify-self: center;
-    @media (min-width: 768px) {
-      justify-self: left;
-    }
-  }
-
-  .lemon {
-    transition: transform 1s ease-in-out;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-    height: 80px;
-    &:hover {
-      transform: rotate(360deg);
-  }
-  }
-`
-
-const MyName = styled(H1)`
-  color: #003215;
-  margin-left: 30px;
-  @media (min-width: 465px) {
-    font-size: 2.8em;
+  justify-content: flex-start;
+  background: #fff;
+  @media (min-width: 550px) {
+    justify-content: center;
   }
   @media (min-width: 768px) {
-    font-size: 2.2em;
+    margin-bottom: 15px;
   }
-  @media (min-width: 1000px) {
-    font-size: 5em;
+  @media (min-width: 1100px) {
   }
+`;
 
-  /* &:hover {
-    color: #e3ca11;
-  } */
-`
-
-const TopNav = styled.div`
+const Content = styled.div`
   display: flex;
-  justify-content: center;
-`
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-items: center;
+  width: 100%;
+  @media (min-width: 450px) {
+  }
+  @media (min-width: 550px) {
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+  }
+  @media (min-width: 1100px) {
+  }
+  #large-nav-links {
+    font-size: 16px;
+    gap: 10px;
+    @media (min-width: 768px) {
+      font-size: ${props => props.theme.fontSize.two};
+      gap: 40px;
+      margin-top: 10px;
+    }
+    @media (min-width: 1200px) {
+      font-size: ${props => props.theme.fontSize.three};
+    }
+    @media (min-width: 1400px) {
+      margin-right: 30px;
+    }
+  }
+`;
 
-const Header = (props) => {
-  const { width } = useViewport();
-  const breakpoint = 768;
+const BigName = styled.h1`
+  font-size: ${props => props.theme.fontSize.two};
+  font-family: 'Josefin Sans';
+  font-weight: 200;
+  text-align: center;
+  color: #3c3c3c;
+  text-transform: uppercase;
+  padding-top: 20px;
+  letter-spacing: 10px;
+  @media (min-width: 380px) {
+    font-size: 1.8em;
+    line-height: 1.1em;
+  }
+  @media (min-width: 768px) {
+    letter-spacing: 12px;
+    text-align: center;
+    font-size: ${props => props.theme.fontSize.five};
+  }
+  @media (min-width: 1300px) {
+    margin-bottom: 50px;
+    margin-right: 120px;
+    letter-spacing: 15px;
+    font-size: ${props => props.theme.fontSize.six};
+  }
+  @media (min-width: 1400px) {
+    font-size: ${props => props.theme.fontSize.seven};
+  }
+`;
+
+const NavLinks = styled.nav`
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: column;
+  font-family: 'Josefin Sans';
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: ${props => props.theme.fontSize.one};
+  gap: 10px;
+  margin: 10px 0;
+  margin: 0;
+  margin-top: 5px;
+  padding-right: 10px;
+  a {
+    cursor: pointer;
+    &:hover {
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+    }
+  }
+`;  
+
+const BigLogo = styled.div`
+  margin-left: 20px;
+  height: 100%;
+  display: none;
+  @media (min-width: 1300px) {
+    display: block;
+  }
+`;
+
+const SmallLogo = styled.div`
+  height: 100%;
+  display: block;
+  margin-left: 5px;
+  @media (min-width: 550px) {
+    left: 30px;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const TabletLogo = styled.div`
+  padding-left: 15px;
+  height: 100%;
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+  @media (min-width: 1300px) {
+    display: none;
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const SmallHeader = styled.header`
+  font-family: 'Josefin Sans';
+  font-weight: bold;
+  width: 100%;
+  height: 60px;
+  padding-left: 15px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+  background: white;
+  box-shadow: 0 2px 2px grey;
+  opacity: 0.2;
+  animation: ${fadeIn} 200ms forwards;
+  h2 {
+    padding-top: 5px;
+    font-size: ${props => props.theme.fontSize.one};
+    letter-spacing: 1px;
+    @media (min-width:500px) {
+      font-size: ${props => props.theme.fontSize.two};
+      letter-spacing: 8px;
+    }
+    @media (min-width: 1000px) {
+      font-size: ${props => props.theme.fontSize.three};
+      letter-spacing: 10px;
+
+    }
+  }
+  #small-navbar {
+    display: none;
+    font-size: ${props => props.theme.fontSize.one};
+    @media (min-width: 680px) {
+      display: grid;
+      gap: 30px;
+    }
+    @media (min-width: 1000px) {
+      font-size: ${props => props.theme.fontSize.two};
+    }
+    @media (min-width: 1200px) {
+      font-size: ${props => props.theme.fontSize.three};
+    }
+  }
+  @media (min-width: 680px) {
+    justify-content: space-between;
+    padding-right: 30px;
+  }
+`;
+
+const cornerFadeIn = keyframes`
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.8;
+  }
+`;
+
+const CornerLogo = styled.div`
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.2;
+  animation: ${cornerFadeIn} 200ms forwards;
+  cursor: pointer;
+  transition: transform 200ms ease;
+  z-index: 400;
+  display: none;
+  &:hover {
+    transform: rotate(-10deg);
+  }
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
+
+const TinyCornerLogo = styled.div`
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  opacity: 0.2;
+  animation: ${cornerFadeIn} 200ms forwards;
+  cursor: pointer;
+  transition: transform 200ms ease;
+  z-index: 400;
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+
+const MobileMenuWrapper = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: none;
+  z-index: 450;
+  display: ${props => props.show ? 'flex' : 'none'};
+  justify-content: flex-end;
+`;
+
+const MobileMenu = styled.div`
+  width: 60%;
+  height: 100%;
+  background: white;
+  padding-top: 90px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 40px;
+  padding-left: 20px;
+  align-content: flex-start;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: ${props => props.theme.fontSize.two};
+  text-transform: uppercase;
+  box-shadow: -3px 0 2px 1px rgba(0, 0, 0, 0.4);
+`;
+
+function Header () {
+  const [smallVisible, setSmallVisible] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [menu, setMenu] = useState();
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const theMenu = document.querySelector('#mobile-menu');
+      setMenu(theMenu);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const largeHeader = document.getElementById('large-header');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setSmallVisible(false);
+          } else {
+            setSmallVisible(true);
+          }
+        })
+      });
+      observer.observe(largeHeader);
+      return () => observer.unobserver(largeHeader);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      if (showMenu) {
+        disableBodyScroll(menu);
+      } else {
+        enableBodyScroll(menu)
+      }
+    }
+  }, [showMenu])
 
   const data = useStaticQuery(
     graphql`
@@ -113,95 +322,166 @@ const Header = (props) => {
             }
           }
         }
-        large: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
+        tablet: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
           childImageSharp {
-            fixed(height: 150) {
+            fixed(height: 190) {
               ...GatsbyImageSharpFixed
             }
           }
         }
-
+        large: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
+          childImageSharp {
+            fixed(height: 300) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        corner: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
+          childImageSharp {
+            fixed(height: 90) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        tinyCorner: file(relativePath: { eq: "bl_logo_dev_square.png" }) {
+          childImageSharp {
+            fixed(height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     `
   )
+  
+  const handleHamburgerClick = () => {
+    setShowMenu(prev => !prev);
+  }
 
+  const handleMenuButtonClick = () => {
+    setShowMenu(false);
+  }
 
-      console.log(data);
   return (
     <>
-    {/* <HeaderTop>
-      <LargeLemon>
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          className="large-lemon"
-          alt="logo"
-        />
-      </LargeLemon>
-    </HeaderTop> */}
-    <HeaderTop>
-      <Img
-        fixed={data.large.childImageSharp.fixed}
-        alt=""
-      />
-      <MyName>Braxton Lemmon</MyName>
-    </HeaderTop>
-    <HeaderBar>
-      {/* <Link to="/">
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          alt="spinning lemon"
-          className="lemon"
-        />
-      </Link>
-    */}
-      {/* <Link to="/Resume" className="name-link">
-      </Link>  */}
-      {/* <Left>
-        <Img
-          fixed={data.small.childImageSharp.fixed}
-          alt=""
-          id="small-logo"
-        />
-        <MyName>Braxton Lemmon</MyName>
-
-      </Left> */}
-      { width >= breakpoint && 
-        <TopNav>
-          <Link to="/">
-            <NavButton top>Home</NavButton>
-          </Link>
-          <ScrollLink
-            to={"work-section"}
-            smooth={false}
-          >
-            <NavButton top>Work</NavButton>
-          </ScrollLink>
-          <ScrollLink
-            to={"about-section"}
-            smooth={false}
-          >
-            <NavButton top>About</NavButton>
-          </ScrollLink>
-          <ScrollLink
-            to={"contact-section"}
-            smooth={false}
-          >
-            <NavButton top>Contact</NavButton>
-          </ScrollLink>
-          {/* <Link to="/Music">
-            <NavButton top>Music</NavButton>
-          </Link> */}
-          {/* <Link to="/About">
-            <NavButton top>About</NavButton>
-          </Link> */}
-          {/* <Link to="/Contact">
-            <NavButton top>Contact</NavButton>
-          </Link> */}
-        </TopNav>
+      <LargeHeader id="large-header">
+        <SmallLogo>
+          <Img
+            fixed={data.corner.childImageSharp.fixed}
+            alt="logo"
+          />
+        </SmallLogo>
+        <BigLogo>
+          <Img
+            id="big-logo"
+            fixed={data.large.childImageSharp.fixed}
+            alt="Large logo for Braxton Lemmon Development"
+          />
+        </BigLogo>
+        <TabletLogo>
+          <Img
+            fixed={data.tablet.childImageSharp.fixed}
+            alt="logo"
+          />
+        </TabletLogo>
+        <Content>
+          <BigName>BRAXTON LEMMON</BigName>
+          <NavLinks id="large-nav-links">
+            <ScrollLink
+              to={'work-section'}
+              smooth={false}
+            >Work</ScrollLink>
+            <ScrollLink
+              to={'about-section'}
+              smooth={false}
+            >About</ScrollLink>
+            <ScrollLink
+              to={'contact-section'}
+              smooth={false}
+            >Contact</ScrollLink>
+          </NavLinks>
+        </Content>
+      </LargeHeader>
+      {
+        smallVisible &&
+        <SmallHeader>
+          <h2>BRAXTON LEMMON</h2>
+          <Hamburger onClick={handleHamburgerClick}>
+            <div className="icon">
+              <div className={showMenu ? "line1 view" : "line1"}></div>
+              <div className={showMenu ? "line2 view" : "line2"}></div>
+              <div className={showMenu ? "line3 view" : "line3"}></div>
+            </div>
+          </Hamburger>
+          <NavLinks id="small-navbar">
+            <ScrollLink
+              to={'work-section'}
+              smooth={false}
+            >Work</ScrollLink>
+            <ScrollLink
+              to={'about-section'}
+              smooth={false}
+            >About</ScrollLink>
+            <ScrollLink
+              to={'contact-section'}
+              smooth={false}
+            >Contact</ScrollLink>
+          </NavLinks>
+        </SmallHeader>
       }
-    </HeaderBar>
+      {
+        smallVisible &&
+        <>
+          <CornerLogo>
+            <ScrollLink
+              to={'large-header'}
+              smooth={false}
+            >
+              <Img
+                fixed={data.corner.childImageSharp.fixed}
+                alt="logo"
+              />
+            </ScrollLink>
+          </CornerLogo>
+          <TinyCornerLogo>
+            <ScrollLink
+              to={'large-header'}
+              smooth={false}
+            >
+              <Img
+                fixed={data.tinyCorner.childImageSharp.fixed}
+                alt="logo"
+              />
+            </ScrollLink>
+
+          </TinyCornerLogo>
+        </>
+      }
+      <MobileMenuWrapper 
+        id="mobile-menu" 
+        show={showMenu}
+        onClick={handleMenuButtonClick}  
+      >
+        <MobileMenu>
+          <ScrollLink
+            to={'work-section'}
+            smooth={false}
+            onClick={handleMenuButtonClick}
+            >Work</ScrollLink>
+          <ScrollLink
+            to={'about-section'}
+            smooth={false}
+            onClick={handleMenuButtonClick}
+          >About</ScrollLink>
+          <ScrollLink
+            to={'contact-section'}
+            smooth={false}
+            onClick={handleMenuButtonClick}
+          >Contact</ScrollLink>
+        </MobileMenu>
+      </MobileMenuWrapper> 
     </>
   )
 }
 
-export default Header
+export default Header;

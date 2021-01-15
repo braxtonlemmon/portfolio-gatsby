@@ -3,8 +3,7 @@ import SEO from "../components/seo"
 import { H2 } from '../components/Headings';
 import styled from 'styled-components';
 import TicTacToe from '../components/TicTacToe/gameLayout';
-import Helmet from 'react-helmet';
-import { withPrefix, Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,6 +25,7 @@ const NotFoundPage = () => {
         <SEO title="404: Not found" />
         <H2>OOPS!</H2>
         <Message>No page found here, care for a game of tic-tac-toe?</Message>
+        <Link to="/">Go Home</Link>
         <TicTacToe />
       </Wrapper>
     </>

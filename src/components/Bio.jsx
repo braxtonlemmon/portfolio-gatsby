@@ -25,8 +25,7 @@ const Bio = () => {
         In 2018 I became a student of The Odin Project Full Stack curriculum and quickly discovered a world that encourages an ideal blend of problem solving and creativity. I've been coding ever since.
       </p>
     </BioBox>
-  )
-    
+  ) 
 }
 
 export default Bio

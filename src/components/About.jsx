@@ -6,7 +6,6 @@ import HobbySlider from '../components/HobbySlider';
 import Title from '../components/Title';
 
 const AboutWrapper = styled.div`
-  /* margin: 50px 10px; */
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -32,7 +31,7 @@ const AboutWrapper = styled.div`
     font-size: ${props => props.theme.fontSize.two};
     font-weight: 400;
   }
-`
+`;
 
 const AboutBox = styled.div`
   display: flex;
@@ -51,19 +50,8 @@ const AboutBox = styled.div`
   H3 {
     margin-bottom: 20px;
   }
-`
+`;
 
-const TechnologyBox = styled(AboutBox)`
-  width: 90%;
-  background: ${({ theme }) => theme.colors.boxColor};
-  background: 'yellow';
-  @media only screen and (min-width: 43em) {
-    width: 80%;
-  }
-  @media only screen and (min-width: 86em) {
-    width: 70%;
-  }
-`
 function About() {
   return (
     <AboutWrapper>

@@ -7,20 +7,13 @@ import {
   FaReact,
   FaLinux,
   FaNodeJs
-  // FaNpm,
 } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io"
 import { Icon } from "@iconify/react"
-import jestIcon from "@iconify/icons-cib/jest"
 import { GrGatsbyjs } from "react-icons/gr"
 
-// import webpackIcon from "@iconify/icons-cib/webpack"
 import languageRubyOnRails from "@iconify/icons-mdi/language-ruby-on-rails"
-// import eslinticon from "@iconify/icons-mdi/eslint"
-// import prettierIcon from "@iconify/icons-cib/prettier"
 import rubyIcon from "@iconify/icons-cib/ruby"
-import postgresqlIcon from "@iconify/icons-cib/postgresql"
-// import mySvg from "../assets/Ableton.svg"
 import gimpIcon from "@iconify/icons-cib/gimp"
 
 const StampWrapper = styled.div`
@@ -50,12 +43,6 @@ const Label = styled.h3`
   margin-top: 5px;
 `
 
-// const Ableton = styled.div`
-//   height: 3.5em;
-//   width: 3.5em;
-//   background-image: url(${mySvg});
-// `
-
 const Stamps = () => {
   const size = "3.5em"
   return (
@@ -76,10 +63,6 @@ const Stamps = () => {
         <FaReact size={size} />
         <Label>React</Label>
       </Stamp>
-      {/* <Stamp>
-        <Icon icon={jestIcon} height={size} />
-        <Label>Jest</Label>
-      </Stamp> */}
       <Stamp>
         <GrGatsbyjs size={size} />
         <Label>GatsbyJS</Label>
@@ -88,22 +71,6 @@ const Stamps = () => {
         <FaNodeJs size={size} />
         <Label>Node.js</Label>
       </Stamp>
-      {/* <Stamp>
-        <FaNpm size={size} />
-        <Label>npm</Label>
-      </Stamp>
-      <Stamp>
-        <Icon icon={webpackIcon} height={size} color="black" />
-        <Label>webpack</Label>
-      </Stamp>
-      <Stamp>
-        <Icon icon={eslinticon} height={size} color="black" />
-        <Label>ESLint</Label>
-      </Stamp>
-      <Stamp>
-        <Icon icon={prettierIcon} height={size} />
-        <Label>Prettier</Label>
-      </Stamp> */}
       <Stamp>
         <Icon icon={rubyIcon} height={size} />
         <Label>Ruby</Label>
@@ -112,10 +79,6 @@ const Stamps = () => {
         <Icon icon={languageRubyOnRails} height={size} color="#494949" />
         <Label>Rails</Label>
       </Stamp>
-      {/* <Stamp>
-        <Icon icon={postgresqlIcon} height={size} />
-        <Label>PostgreSQL</Label>
-      </Stamp> */}
       <Stamp>
         <FaGitAlt size={size} />
         <Label>Git</Label>
@@ -124,10 +87,6 @@ const Stamps = () => {
         <FaLinux size={size} />
         <Label>Linux</Label>
       </Stamp>
-      {/* <Stamp>
-        <Ableton></Ableton>
-        <Label>Ableton Live</Label>
-      </Stamp> */}
       <Stamp>
         <Icon icon={gimpIcon} height={size} />
         <Label>GIMP</Label>

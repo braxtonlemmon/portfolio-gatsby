@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H2 } from "../components/Headings"
 import { FiMail } from "react-icons/fi"
 import {
   FaLinkedinIn,
@@ -9,7 +8,6 @@ import {
   FaSoundcloud,
   FaFacebookMessenger,
 } from "react-icons/fa"
-import { Link } from "gatsby"
 import Title from '../components/Title';
 import resume from '../downloads/braxton_lemmon_resume.pdf';
 
@@ -23,7 +21,7 @@ const Icon = styled.a`
   &:focus {
     color: #464646;
   }
-`
+`;
 
 const SiteLink = styled.a`
   color: ${props => props.theme.colors.linkColor};
@@ -33,7 +31,8 @@ const SiteLink = styled.a`
   &:hover {
     color: ${props => props.theme.colors.sandstone};
   }
-`
+`;
+
 const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -63,7 +62,8 @@ const ContactWrapper = styled.div`
   #contact-section-one {
     margin-top: 50px;
   }
-`
+`;
+
 const ContactSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -91,11 +91,7 @@ const ContactSection = styled.div`
       margin: 0 15px;
     }
   }
-
-  /* a {
-   color: #3c3c3c;
-  } */
-`
+`;
 
 function Contact() {
   const size = "2em";
@@ -144,7 +140,6 @@ function Contact() {
           </div>
         </ContactSection>
     </ContactWrapper>
-
   )
 }
 

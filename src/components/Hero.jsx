@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Crossword from './Crossword';
-import BigName from './BigName';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,26 +18,9 @@ const Wrapper = styled.div`
   }
 `;
 
-function Hero() {
-  const data = useStaticQuery(graphql`
-    query BigLogo {
-      file(relativePath: { eq: "bl_logo_dev_square.png" }) {
-        childImageSharp {
-          fixed(height: 500) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-  
+function Hero() { 
   return (
     <Wrapper>
-      {/* <BigName /> */}
-      {/* <Img
-        fixed={data.file.childImageSharp.fixed}
-        alt=""
-      /> */}
       <Crossword />
       <div id="work-section"></div>
     </Wrapper>

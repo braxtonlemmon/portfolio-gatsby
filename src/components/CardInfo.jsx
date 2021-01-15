@@ -17,14 +17,14 @@ const CardInfoBox = styled.div`
   top: 0;
   left: 0;
   background: rgba(221, 221, 221, 0.54);
-`
+`;
 
 const CardTitle = styled(H2)`
   background: rgb(222, 209, 175, 0.8);
   padding: 10px;
   border: 2px solid black;
   border-radius: 10px;
-`
+`;
 
 const CardAbout = styled.p`
   text-align: center;
@@ -32,7 +32,7 @@ const CardAbout = styled.p`
   padding: 5px;
   border: 2px solid black;
   border-radius: 5px;
-`
+`;
 
 const CardTechnologies = styled.ul`
   display: flex;
@@ -42,14 +42,14 @@ const CardTechnologies = styled.ul`
   padding: 5px;
   border: 2px solid black;
   border-radius: 5px;
-`
+`;
 
 const CardInfo = props => {
   const info = props.info
   const list = []
   info.technologies.forEach(tech => {
     list.push(<li key={tech}>{tech}</li>)
-  })
+  });
 
   return (
     <CardInfoBox>
@@ -60,4 +60,4 @@ const CardInfo = props => {
   )
 }
 
-export default CardInfo
+export default CardInfo;

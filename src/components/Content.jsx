@@ -6,7 +6,6 @@ const Content = styled.main`
   width: 100%;
   display: flex;
   justify-content: center;
-
   .fade-appear,
   .fade-enter {
     opacity: 0;
@@ -42,6 +41,6 @@ const Content = styled.main`
       margin-bottom: 0;
     }
   }
-`
+`;
 
-export default Content
+export default Content;
