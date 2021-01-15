@@ -107,20 +107,36 @@ h2 {
 /* NAME */
 .resume__name {
   grid-area: name;
-  background-color: rgba(255, 166, 0, 0.473);
+  background-color: #fbe683;
+  background: #ececec;
+  background: #003215;
+  background: #78766a;
+  color: #003215;
+  color: #ececec;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  box-shadow: -2px 3px grey;
+  /* box-shadow: -2px 3px grey; */
   border-radius: 5px;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans';
+  font-weight: bold;
+  position: relative;
 }
 
+#resume-lemon {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  right: 10px;
+  top: 10px;
+}
 .resume__name-first, .resume__name-last {
   font-size: 2rem;
 }
 
 .resume__name-last {
-  align-self: center;
+  align-self: flex-start;
 }
 
 .resume__name-title {
@@ -132,7 +148,9 @@ h2 {
 .resume__info {
   grid-area: info;
   background: rgba(241, 213, 175, 0.479);
-  box-shadow: -2px 3px grey;
+  background: #ececec;
+  color: #003215;
+  /* box-shadow: -2px 3px grey; */
   border-radius: 5px;
   font-size: 13px;
   }
@@ -167,7 +185,8 @@ h2 {
   justify-content: center;
   margin: 0;
   padding: 5px 15px;
-  box-shadow: -2px 3px grey;
+  background: #ececec;
+  /* box-shadow: -2px 3px grey; */
   border-radius: 5px;
 }
 
@@ -187,7 +206,7 @@ h2 {
 /* PROJECTS */
 .resume__projects {
   grid-area: projects;
-  background: rgba(173, 216, 230, 0.26);
+  /* background: rgba(173, 216, 230, 0.26); */
 }
 
 .resume__project {
@@ -214,7 +233,7 @@ h2 {
 /* SKILLS */
 .resume__skills {
   grid-area: skills;
-  background: rgba(173, 216, 230, 0.26);
+  /* background: rgba(173, 216, 230, 0.26); */
 }
 
 .resume__skills-list {
@@ -234,7 +253,7 @@ h2 {
 /* SCHOOLS */
 .resume__school {
   grid-area: school;
-  background: rgba(173, 216, 230, 0.26);
+  /* background: rgba(173, 216, 230, 0.26); */
 }
 
 .resume__school-item, .resume__work-item {
@@ -256,7 +275,7 @@ h2 {
 /* resume__WORK */
 .resume__work {
   grid-area: work;
-  background: rgba(173, 216, 230, 0.26);
+  /* background: rgba(173, 216, 230, 0.26); */
 }
 
 /* PRINTING */

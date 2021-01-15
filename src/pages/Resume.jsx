@@ -2,12 +2,15 @@ import React from "react"
 import "../theme/resumeStyle.css"
 import styled from "styled-components"
 import SEO from '../components/seo';
+import lemon from '../images/bl_logo_square.png';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+  /* margin-bottom: 300px; */
+  height: 100%;
+  font-family: 'Lato', sans-serif;
   a {
     text-decoration: none;
     color: ${props => props.theme.colors.linkColor};
@@ -44,12 +47,13 @@ function Resume() {
           <div className="resume__name">
             <h1 className="resume__name-first">Braxton</h1>
             <h1 className="resume__name-last">Lemmon</h1>
+            <img id="resume-lemon" src={lemon} alt=""/>
             <h2 className="resume__name-title">Web Developer</h2>
           </div>
           <div className="resume__info">
             <div className="resume__info-row">
               <span className="resume__info-label">Phone:</span>
-              <span className="resume__info-value">+32 493 12 33 08</span>
+              <span className="resume__info-value">(801) 960-0831</span>
             </div>
             <div className="resume__info-row">
               <span className="resume__info-label">Email:</span>
@@ -214,13 +218,12 @@ function Resume() {
                 <li className="resume__skills-list-item">CSS3</li>
                 <li className="resume__skills-list-item">JavaScript</li>
                 <li className="resume__skills-list-item">React</li>
+                <li className="resume__skills-list-item">Gatsby.js</li>
+                <li className="resume__skills-list-item">Node.js</li>
+                <li className="resume__skills-list-item">Express</li>
                 <li className="resume__skills-list-item">Ruby on Rails</li>
-                <li className="resume__skills-list-item">RSpec</li>
-                <li className="resume__skills-list-item">Jest</li>
                 <li className="resume__skills-list-item">Git</li>
                 <li className="resume__skills-list-item">Linux</li>
-                <li className="resume__skills-list-item">Express</li>
-                <li className="resume__skills-list-item">Node.js</li>
               </ul>
             </div>
           </div>
@@ -229,7 +232,7 @@ function Resume() {
             <div className="resume__school-content content">
               <div className="resume__school-item">
                 <h3 className="resume__school-name">The Odin Project</h3>
-                <p className="resume__school-date">2018 - Present</p>
+                <p className="resume__school-date">2018 - 2020</p>
                 <h4 className="resume__school-track">Full Stack Track</h4>
               </div>
               <div className="resume__school-item">
