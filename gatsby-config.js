@@ -18,8 +18,8 @@ module.exports = {
         name: `Braxton Lemmon - Web Developer`,
         short_name: `Braxton Lemmon`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#78766a`,
+        theme_color: `#78766a`,
         display: `minimal-ui`,
         icon: `src/images/bl_logo_square.png`, // This path is relative to the root of the site.
       },
