@@ -16,13 +16,13 @@ const TileBox = styled.div`
 
   border: ${props => {
     if (props.accent) {
-      return "3px solid #2e2e2e"
+      return "2px solid #2e2e2e"
     } else {
       return "none"
     }
   }};
 
-  @media (min-width: 416px) {
+  @media (min-width: 650px) {
     border: ${props => {
     if (props.accent) {
       return "4px solid #2e2e2e"

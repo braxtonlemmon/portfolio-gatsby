@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa"
 import { Link } from "gatsby"
 import Title from '../components/Title';
+import resume from '../downloads/braxton_lemmon_resume.pdf';
 
 const Icon = styled.a`
   text-decoration: none;
@@ -114,11 +115,8 @@ function Contact() {
         <ContactSection>
           <h3>Resume</h3>
           <div>
-            <Link to="/Resume" className="view">
-              <p>View</p>
-            </Link>
             <SiteLink
-              href={`${process.env.PUBLIC_URL}/braxton_lemmon_resume.pdf`}
+              href={resume}
               download
             >
               <p>Download</p>

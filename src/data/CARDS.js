@@ -93,7 +93,7 @@ const CARDS = [
     y: 0,
     info: {
       title: "Become Thumb One",
-      about: 'In November 2020, Gatsby hosted a Silly Site Challenge. Participants were asked to create a webiste that focused on silliness, accessibility, performance, and creativity. Become Thumb One is a site with a very random theme in which a user completes a variety of tasks to "become thumb one."',
+      about: 'In November 2020, Gatsby hosted a Silly Site Challenge. Participants were asked to create a website that focused on silliness, accessibility, performance, and creativity. Become Thumb One is a site with a very random theme in which a user completes a variety of tasks to "become thumb one."',
       learned: [
         [
           'Web accessibility',

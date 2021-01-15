@@ -17,7 +17,7 @@ const Wrapper = styled.footer`
 const Footer = () => {
   return (
     <Wrapper>
-      <p>Braxton Lemmon © 2020 - 2021</p>
+      <p>Braxton Lemmon © 2021</p>
     </Wrapper>
   )
 }
