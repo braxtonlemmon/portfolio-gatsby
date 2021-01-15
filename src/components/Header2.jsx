@@ -114,8 +114,9 @@ const NavLinks = styled.nav`
     /* font-size: 1.2em; */
     cursor: pointer;
     &:hover {
-      /* text-decoration: underline; */
-      border-bottom: 1px solid black
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      /* border-bottom: 1px solid black */
     }
   }
 `;  
@@ -288,6 +289,7 @@ const MobileMenu = styled.div`
   font-family: 'Josefin Sans', sans-serif;
   font-size: ${props => props.theme.fontSize.two};
   text-transform: uppercase;
+  box-shadow: -3px 0 2px 1px rgba(0, 0, 0, 0.4);
 `;
 
 function Header () {
