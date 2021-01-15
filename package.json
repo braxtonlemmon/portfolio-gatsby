@@ -47,6 +47,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "postinstall": "npx patch-package",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
