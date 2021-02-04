@@ -51,6 +51,14 @@ module.exports = {
         siteUrl: 'https://www.braxtonlemmon.com/',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [
+          "UA-189021178-1"
+        ]
+      }
+    },
     // 'gatsby-plugin-offline',
     'gatsby-plugin-styled-components',
     `gatsby-plugin-react-helmet`,
